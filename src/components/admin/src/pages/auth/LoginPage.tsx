@@ -107,11 +107,12 @@ export const LoginPage: React.FC = () => {
       <div className="w-full max-w-[440px] bg-white/95 dark:bg-slate-900/90 backdrop-blur-2xl border border-[#E2E8F0] dark:border-slate-800 rounded-3xl p-8 shadow-xl relative z-10">
         {/* Header Logo */}
         <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0891B2] to-[#0EA5E9] flex items-center justify-center shadow-lg shadow-[#0891B2]/20 mb-4 animate-pulse">
-            <BookOpen className="text-white" size={24} />
-          </div>
-          <h1 className="font-serif text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">Daily Bharat</h1>
-          <p className="text-[#64748B] text-sm mt-1">CMS Control Room</p>
+          <img
+            src="/logo.png"
+            alt="Daily Bharat Logo"
+            className="h-20 w-auto object-contain mb-3"
+          />
+          <p className="text-[#64748B] text-xs font-semibold uppercase tracking-wider">CMS Control Room</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-5">

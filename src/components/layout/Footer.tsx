@@ -77,13 +77,12 @@ export const Footer: React.FC = () => {
 
             {/* Brand Column */}
             <div className="lg:col-span-1">
-              <Link to="/" className="flex items-center gap-2.5 mb-4">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0891B2] to-[#06B6D4] flex items-center justify-center">
-                  <BookOpen size={18} className="text-white" strokeWidth={2.5} />
-                </div>
-                <span className="font-serif font-bold text-xl tracking-tight">
-                  Daily <span className="text-[#06B6D4]">Bharat</span>
-                </span>
+              <Link to="/" className="inline-block mb-4">
+                <img
+                  src="/logo.png"
+                  alt="Daily Bharat Logo"
+                  className="h-12 w-auto object-contain bg-white rounded-xl p-1.5 shadow-sm"
+                />
               </Link>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
                 Delivering high-quality articles, tutorials, and insights on modern web development, design, and technology.

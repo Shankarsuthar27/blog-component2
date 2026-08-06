@@ -71,14 +71,11 @@ export const Sidebar: React.FC = () => {
         <div className="flex-1 flex flex-col min-h-0">
           <div className="h-[70px] flex items-center justify-between px-5 border-b border-[#E2E8F0] dark:border-slate-800 shrink-0">
             <div className="flex items-center gap-3 overflow-hidden">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0891B2] to-[#0EA5E9] flex items-center justify-center shadow-md shadow-[#0891B2]/20 shrink-0">
-                <Icons.BookOpen className="text-white" size={20} />
-              </div>
-              {sidebarOpen && (
-                <span className="font-serif font-bold text-lg text-[#0F172A] dark:text-white tracking-tight">
-                  Daily<span className="text-[#0891B2]">Bharat</span>
-                </span>
-              )}
+              <img
+                src="/logo.png"
+                alt="Daily Bharat Logo"
+                className="h-10 w-auto object-contain shrink-0"
+              />
             </div>
             <button
               onClick={toggleSidebar}

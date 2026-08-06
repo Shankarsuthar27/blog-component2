@@ -66,15 +66,14 @@ export const Header: React.FC = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 shrink-0"
+            className="flex items-center gap-3 shrink-0 py-1"
             onClick={closeMobile}
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0891B2] to-[#06B6D4] flex items-center justify-center shadow-sm">
-              <BookOpen size={18} className="text-white" strokeWidth={2.5} />
-            </div>
-            <span className="font-serif font-bold text-xl text-[#0F172A] tracking-tight">
-              Daily <span className="text-[#0891B2]">Bharat</span>
-            </span>
+            <img
+              src="/logo.png"
+              alt="Daily Bharat Logo"
+              className="h-11 md:h-12 w-auto object-contain transition-transform hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Nav */}
