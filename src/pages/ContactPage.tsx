@@ -62,7 +62,7 @@ export const ContactPage: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-16 space-y-4"
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ECFEFF] text-[#0891B2] border border-[#CFFAFE]">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ECFEFF] text-[#D80408] border border-[#CFFAFE]">
               <Mail size={12} /> Get in Touch
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#0F172A] leading-tight">
@@ -82,7 +82,7 @@ export const ContactPage: React.FC = () => {
                 
                 <div className="space-y-4 text-xs text-[#64748B]">
                   <div className="flex items-start gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-[#0891B2] shrink-0 mt-0.5">
+                    <div className="w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-[#D80408] shrink-0 mt-0.5">
                       <MapPin size={18} />
                     </div>
                     <div>
@@ -92,7 +92,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3 pt-2">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-[#0891B2] shrink-0 mt-0.5">
+                    <div className="w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-[#D80408] shrink-0 mt-0.5">
                       <Mail size={18} />
                     </div>
                     <div>
@@ -103,7 +103,7 @@ export const ContactPage: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3 pt-2">
-                    <div className="w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-[#0891B2] shrink-0 mt-0.5">
+                    <div className="w-9 h-9 rounded-xl bg-cyan-50 flex items-center justify-center text-[#D80408] shrink-0 mt-0.5">
                       <Phone size={18} />
                     </div>
                     <div>
@@ -130,7 +130,7 @@ export const ContactPage: React.FC = () => {
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="px-6 py-2.5 bg-[#0891B2] text-white text-xs font-bold rounded-xl hover:bg-[#06B6D4] transition"
+                      className="px-6 py-2.5 bg-[#D80408] text-white text-xs font-bold rounded-xl hover:bg-[#06B6D4] transition"
                     >
                       Send Another Message
                     </button>
@@ -147,7 +147,7 @@ export const ContactPage: React.FC = () => {
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="John Doe"
-                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/10 transition"
+                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/10 transition"
                       />
                     </div>
 
@@ -161,7 +161,7 @@ export const ContactPage: React.FC = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="john@example.com"
-                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/10 transition"
+                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/10 transition"
                       />
                     </div>
 
@@ -174,7 +174,7 @@ export const ContactPage: React.FC = () => {
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
                         placeholder="Feedback, Editorial Inquiry, Partnership..."
-                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/10 transition"
+                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/10 transition"
                       />
                     </div>
 
@@ -188,14 +188,14 @@ export const ContactPage: React.FC = () => {
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         placeholder="Write your message here..."
-                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/10 transition resize-none"
+                        className="w-full px-4 py-3 bg-[#F8FAFC] border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/10 transition resize-none"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-gradient-to-r from-[#0891B2] to-[#06B6D4] hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-md shadow-[#0891B2]/20 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                      className="w-full bg-gradient-to-r from-[#D80408] to-[#06B6D4] hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-md shadow-[#D80408]/20 transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
                     >
                       {submitting ? (
                         <>

@@ -40,8 +40,8 @@ export const Sidebar: React.FC = () => {
       className={({ isActive }) =>
         `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all duration-200 group ${
           isActive
-            ? 'bg-gradient-to-r from-[#0891B2] to-[#0EA5E9] text-white shadow-md shadow-[#0891B2]/20 font-semibold'
-            : 'text-[#475569] dark:text-slate-400 hover:bg-[#ECFEFF] dark:hover:bg-slate-800/80 hover:text-[#0891B2] dark:hover:text-cyan-400'
+            ? 'bg-gradient-to-r from-[#D80408] to-[#0EA5E9] text-white shadow-md shadow-[#D80408]/20 font-semibold'
+            : 'text-[#475569] dark:text-slate-400 hover:bg-[#ECFEFF] dark:hover:bg-slate-800/80 hover:text-[#D80408] dark:hover:text-cyan-400'
         }`
       }
       title={!sidebarOpen && !isMobile ? item.label : undefined}
@@ -78,7 +78,7 @@ export const Sidebar: React.FC = () => {
               />
               {sidebarOpen && (
                 <span className="font-serif font-bold text-base text-[#0F172A] dark:text-white tracking-tight whitespace-nowrap">
-                  Daily<span className="text-[#0891B2]">Bharat</span>
+                  Daily<span className="text-[#D80408]">Bharat</span>
                 </span>
               )}
             </div>
@@ -145,14 +145,14 @@ export const Sidebar: React.FC = () => {
               <img
                 src={profile?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150'}
                 alt={profile?.full_name || 'Admin'}
-                className="w-9 h-9 rounded-xl object-cover ring-2 ring-[#0891B2]/20 shrink-0"
+                className="w-9 h-9 rounded-xl object-cover ring-2 ring-[#D80408]/20 shrink-0"
               />
               {sidebarOpen && (
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-bold text-[#0F172A] dark:text-white truncate">
                     {profile?.full_name || 'System Admin'}
                   </p>
-                  <p className="text-[10px] font-semibold text-[#0891B2] dark:text-cyan-400 uppercase tracking-wider truncate">
+                  <p className="text-[10px] font-semibold text-[#D80408] dark:text-cyan-400 uppercase tracking-wider truncate">
                     {profile?.role || 'superadmin'}
                   </p>
                 </div>

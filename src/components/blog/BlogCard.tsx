@@ -29,7 +29,7 @@ export const BlogCard: React.FC<Props> = ({ post, index = 0 }) => {
           />
         </div>
         {/* Category overlay badge */}
-        <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#0891B2] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+        <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#D80408] text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
           {post.category}
         </span>
       </div>
@@ -38,12 +38,12 @@ export const BlogCard: React.FC<Props> = ({ post, index = 0 }) => {
       <div className="flex flex-col justify-between flex-grow p-5 md:p-6">
         <div>
           {/* Category badge (hidden on mobile, shown in image overlay) */}
-          <span className="hidden sm:inline-block bg-cyan-50 text-[#0891B2] text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider border border-cyan-100 mb-3">
+          <span className="hidden sm:inline-block bg-cyan-50 text-[#D80408] text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider border border-cyan-100 mb-3">
             {post.category}
           </span>
 
           {/* Title */}
-          <h2 className="font-serif text-lg md:text-xl font-bold text-[#0F172A] leading-snug mb-3 line-clamp-2 group-hover:text-[#0891B2] transition-colors duration-200">
+          <h2 className="font-serif text-lg md:text-xl font-bold text-[#0F172A] leading-snug mb-3 line-clamp-2 group-hover:text-[#D80408] transition-colors duration-200">
             {post.title}
           </h2>
 
@@ -78,7 +78,7 @@ export const BlogCard: React.FC<Props> = ({ post, index = 0 }) => {
 
           <Link
             to={`/blog/${post.slug}`}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0891B2] hover:text-[#F97316] transition-colors duration-200 group/link"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#D80408] hover:text-[#F97316] transition-colors duration-200 group/link"
             aria-label={`Read more about ${post.title}`}
           >
             Read More

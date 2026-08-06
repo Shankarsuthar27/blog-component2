@@ -34,12 +34,12 @@ export const SearchWidget: React.FC<Props> = ({ value, onChange }) => {
                 if (e.target.value === '') onChange('');
               }}
               placeholder="Search…"
-              className="w-full pl-9 pr-3 py-2.5 border border-slate-200 rounded-xl text-sm text-[#111827] placeholder-[#94A3B8] focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/20 transition"
+              className="w-full pl-9 pr-3 py-2.5 border border-slate-200 rounded-xl text-sm text-[#111827] placeholder-[#94A3B8] focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/20 transition"
             />
           </div>
           <button
             type="submit"
-            className="bg-[#0891B2] hover:bg-[#0e7490] text-white text-sm font-medium px-3 py-2.5 rounded-xl transition-colors shrink-0"
+            className="bg-[#D80408] hover:bg-[#0e7490] text-white text-sm font-medium px-3 py-2.5 rounded-xl transition-colors shrink-0"
             aria-label="Submit search"
           >
             <Search size={15} />

@@ -234,7 +234,7 @@ Tokens are the atoms of your design system. They encode decisions like colors, s
 {
   "color": {
     "brand": {
-      "primary": { "value": "#0891B2" },
+      "primary": { "value": "#D80408" },
       "secondary": { "value": "#06B6D4" }
     }
   },

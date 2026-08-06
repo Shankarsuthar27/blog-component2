@@ -20,7 +20,7 @@ export const AboutPage: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-16 space-y-4"
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ECFEFF] text-[#0891B2] border border-[#CFFAFE]">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ECFEFF] text-[#D80408] border border-[#CFFAFE]">
               <Sparkles size={12} /> About Daily Bharat
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#0F172A] leading-tight">
@@ -39,19 +39,19 @@ export const AboutPage: React.FC = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm text-center"
           >
             <div>
-              <p className="font-serif text-3xl md:text-4xl font-bold text-[#0891B2]">150K+</p>
+              <p className="font-serif text-3xl md:text-4xl font-bold text-[#D80408]">150K+</p>
               <p className="text-xs font-semibold text-[#64748B] uppercase tracking-wider mt-1">Monthly Readers</p>
             </div>
             <div>
-              <p className="font-serif text-3xl md:text-4xl font-bold text-[#0891B2]">480+</p>
+              <p className="font-serif text-3xl md:text-4xl font-bold text-[#D80408]">480+</p>
               <p className="text-xs font-semibold text-[#64748B] uppercase tracking-wider mt-1">Published Articles</p>
             </div>
             <div>
-              <p className="font-serif text-3xl md:text-4xl font-bold text-[#0891B2]">25K+</p>
+              <p className="font-serif text-3xl md:text-4xl font-bold text-[#D80408]">25K+</p>
               <p className="text-xs font-semibold text-[#64748B] uppercase tracking-wider mt-1">Newsletter Subscribers</p>
             </div>
             <div>
-              <p className="font-serif text-3xl md:text-4xl font-bold text-[#0891B2]">99.8%</p>
+              <p className="font-serif text-3xl md:text-4xl font-bold text-[#D80408]">99.8%</p>
               <p className="text-xs font-semibold text-[#64748B] uppercase tracking-wider mt-1">Positive Satisfaction</p>
             </div>
           </motion.div>
@@ -62,7 +62,7 @@ export const AboutPage: React.FC = () => {
               whileHover={{ y: -4 }}
               className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-4"
             >
-              <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#0891B2]">
+              <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#D80408]">
                 <Target size={24} />
               </div>
               <h3 className="font-serif text-xl font-bold text-[#0F172A]">Our Mission</h3>
@@ -75,7 +75,7 @@ export const AboutPage: React.FC = () => {
               whileHover={{ y: -4 }}
               className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-4"
             >
-              <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#0891B2]">
+              <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#D80408]">
                 <Award size={24} />
               </div>
               <h3 className="font-serif text-xl font-bold text-[#0F172A]">Editorial Quality</h3>
@@ -88,7 +88,7 @@ export const AboutPage: React.FC = () => {
               whileHover={{ y: -4 }}
               className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-4"
             >
-              <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#0891B2]">
+              <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-[#D80408]">
                 <Heart size={24} />
               </div>
               <h3 className="font-serif text-xl font-bold text-[#0F172A]">Community First</h3>
@@ -114,7 +114,7 @@ export const AboutPage: React.FC = () => {
                 />
                 <div>
                   <h4 className="font-serif font-bold text-lg text-[#0F172A]">Alex Morgan</h4>
-                  <p className="text-xs text-[#0891B2] font-semibold uppercase tracking-wider">Editor-in-Chief</p>
+                  <p className="text-xs text-[#D80408] font-semibold uppercase tracking-wider">Editor-in-Chief</p>
                 </div>
                 <p className="text-xs text-[#64748B]">Full-stack architect with 12+ years of experience in distributed systems and React ecosystems.</p>
               </div>
@@ -127,7 +127,7 @@ export const AboutPage: React.FC = () => {
                 />
                 <div>
                   <h4 className="font-serif font-bold text-lg text-[#0F172A]">Sophia Lin</h4>
-                  <p className="text-xs text-[#0891B2] font-semibold uppercase tracking-wider">Head of Design</p>
+                  <p className="text-xs text-[#D80408] font-semibold uppercase tracking-wider">Head of Design</p>
                 </div>
                 <p className="text-xs text-[#64748B]">UI/UX Lead specializing in accessibility, motion design, and enterprise SaaS design systems.</p>
               </div>
@@ -140,7 +140,7 @@ export const AboutPage: React.FC = () => {
                 />
                 <div>
                   <h4 className="font-serif font-bold text-lg text-[#0F172A]">Marcus Vance</h4>
-                  <p className="text-xs text-[#0891B2] font-semibold uppercase tracking-wider">Senior Tech Writer</p>
+                  <p className="text-xs text-[#D80408] font-semibold uppercase tracking-wider">Senior Tech Writer</p>
                 </div>
                 <p className="text-xs text-[#64748B]">Cloud architecture specialist writing in-depth tutorials on Next.js, Supabase, and DevOps pipelines.</p>
               </div>

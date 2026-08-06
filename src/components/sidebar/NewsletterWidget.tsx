@@ -48,7 +48,7 @@ export const NewsletterWidget: React.FC = () => {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0891B2] to-[#0369A1] p-6 text-white shadow-lg">
+    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#D80408] to-[#0369A1] p-6 text-white shadow-lg">
       {/* Decorative circles */}
       <div className="absolute -top-8 -right-8 w-32 h-32 bg-white/10 rounded-full" />
       <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-white/5 rounded-full" />

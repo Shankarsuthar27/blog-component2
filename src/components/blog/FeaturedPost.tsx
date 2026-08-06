@@ -35,8 +35,8 @@ export const FeaturedPost: React.FC<Props> = ({ post }) => {
 
           {/* Badges on image */}
           <div className="absolute top-5 left-5 flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-[#0891B2] text-xs font-bold px-3 py-1.5 rounded-full shadow-sm uppercase tracking-wider">
-              <Star size={11} className="fill-[#0891B2]" />
+            <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-[#D80408] text-xs font-bold px-3 py-1.5 rounded-full shadow-sm uppercase tracking-wider">
+              <Star size={11} className="fill-[#D80408]" />
               Featured Post
             </span>
           </div>
@@ -45,12 +45,12 @@ export const FeaturedPost: React.FC<Props> = ({ post }) => {
         {/* Content */}
         <div className="lg:w-[45%] p-8 lg:p-10 xl:p-12 flex flex-col justify-center relative">
           {/* Category Badge */}
-          <span className="inline-block bg-cyan-50 text-[#0891B2] text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider border border-cyan-200 mb-5 self-start">
+          <span className="inline-block bg-cyan-50 text-[#D80408] text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider border border-cyan-200 mb-5 self-start">
             {post.category}
           </span>
 
           {/* Title */}
-          <h1 className="font-serif text-2xl md:text-3xl xl:text-4xl font-bold text-[#0F172A] leading-tight mb-4 group-hover:text-[#0891B2] transition-colors duration-300">
+          <h1 className="font-serif text-2xl md:text-3xl xl:text-4xl font-bold text-[#0F172A] leading-tight mb-4 group-hover:text-[#D80408] transition-colors duration-300">
             {post.title}
           </h1>
 

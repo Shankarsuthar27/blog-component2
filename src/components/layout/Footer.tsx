@@ -148,7 +148,7 @@ export const Footer: React.FC = () => {
                 Subscribe to get the latest posts and insights delivered to your inbox.
               </p>
               {subscribed ? (
-                <div className="bg-[#0891B2]/20 border border-[#0891B2]/30 text-[#06B6D4] text-sm px-4 py-3 rounded-xl">
+                <div className="bg-[#D80408]/20 border border-[#D80408]/30 text-[#06B6D4] text-sm px-4 py-3 rounded-xl">
                   ✓ You're subscribed! Welcome aboard.
                 </div>
               ) : (
@@ -161,12 +161,12 @@ export const Footer: React.FC = () => {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="your@email.com"
                       required
-                      className="w-full pl-9 pr-3 py-2.5 bg-[#1E293B] border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#0891B2] focus:ring-1 focus:ring-[#0891B2] transition"
+                      className="w-full pl-9 pr-3 py-2.5 bg-[#1E293B] border border-slate-700 rounded-xl text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#D80408] focus:ring-1 focus:ring-[#D80408] transition"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#0891B2] hover:bg-[#0e7490] text-white text-sm font-medium py-2.5 rounded-xl transition-colors"
+                    className="w-full bg-[#D80408] hover:bg-[#0e7490] text-white text-sm font-medium py-2.5 rounded-xl transition-colors"
                   >
                     Subscribe Now
                   </button>
@@ -204,7 +204,7 @@ export const Footer: React.FC = () => {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.2 }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-6 right-6 w-11 h-11 bg-[#0891B2] hover:bg-[#0e7490] text-white rounded-full shadow-lg flex items-center justify-center z-40 transition-colors"
+            className="fixed bottom-6 right-6 w-11 h-11 bg-[#D80408] hover:bg-[#0e7490] text-white rounded-full shadow-lg flex items-center justify-center z-40 transition-colors"
             aria-label="Back to top"
           >
             <ArrowUp size={18} />

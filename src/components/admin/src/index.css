@@ -2,7 +2,7 @@
 
 @theme {
   /* Soft White + Cyan + Navy Design System */
-  --color-primary: #0891B2;
+  --color-primary: #D80408;
   --color-primary-hover: #0EA5E9;
   --color-primary-light: #ECFEFF;
   --color-primary-soft: #CFFAFE;
@@ -118,7 +118,7 @@
 }
 
 .ProseMirror blockquote {
-  border-left: 4px solid #0891B2;
+  border-left: 4px solid #D80408;
   padding-left: 1rem;
   font-style: italic;
   color: #64748B;

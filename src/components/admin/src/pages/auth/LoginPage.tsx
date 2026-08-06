@@ -101,7 +101,7 @@ export const LoginPage: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] dark:bg-[#0F172A] px-4 relative overflow-hidden text-[#475569]">
       {/* Decorative Cyan Blur Circles */}
-      <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#0891B2]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#D80408]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#0EA5E9]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="w-full max-w-[440px] bg-white/95 dark:bg-slate-900/90 backdrop-blur-2xl border border-[#E2E8F0] dark:border-slate-800 rounded-3xl p-8 shadow-xl relative z-10">
@@ -114,7 +114,7 @@ export const LoginPage: React.FC = () => {
               className="h-16 w-auto object-contain"
             />
             <span className="font-serif font-bold text-2xl text-[#0F172A] dark:text-white tracking-tight">
-              Daily <span className="text-[#0891B2]">Bharat</span>
+              Daily <span className="text-[#D80408]">Bharat</span>
             </span>
           </div>
           <p className="text-[#64748B] text-xs font-semibold uppercase tracking-wider">CMS Control Room</p>
@@ -134,7 +134,7 @@ export const LoginPage: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin2233"
-                className="w-full pl-12 pr-4 py-3 bg-[#F8FAFC] dark:bg-slate-800/60 border border-[#E2E8F0] dark:border-slate-700 rounded-xl text-sm text-[#0F172A] dark:text-white placeholder-[#64748B] focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/10 transition font-medium"
+                className="w-full pl-12 pr-4 py-3 bg-[#F8FAFC] dark:bg-slate-800/60 border border-[#E2E8F0] dark:border-slate-700 rounded-xl text-sm text-[#0F172A] dark:text-white placeholder-[#64748B] focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/10 transition font-medium"
               />
             </div>
           </div>
@@ -147,7 +147,7 @@ export const LoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => navigate('/admin/forgot-password')}
-                className="text-xs font-medium text-[#0891B2] hover:text-[#0EA5E9] transition"
+                className="text-xs font-medium text-[#D80408] hover:text-[#0EA5E9] transition"
               >
                 Forgot?
               </button>
@@ -161,7 +161,7 @@ export const LoginPage: React.FC = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-12 pr-12 py-3 bg-[#F8FAFC] dark:bg-slate-800/60 border border-[#E2E8F0] dark:border-slate-700 rounded-xl text-sm text-[#0F172A] dark:text-white placeholder-[#64748B] focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/10 transition font-medium"
+                className="w-full pl-12 pr-12 py-3 bg-[#F8FAFC] dark:bg-slate-800/60 border border-[#E2E8F0] dark:border-slate-700 rounded-xl text-sm text-[#0F172A] dark:text-white placeholder-[#64748B] focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/10 transition font-medium"
               />
               <button
                 type="button"
@@ -176,7 +176,7 @@ export const LoginPage: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-[#0891B2] to-[#0EA5E9] hover:opacity-95 active:scale-[0.98] disabled:scale-100 disabled:opacity-50 text-white font-bold py-3 rounded-xl shadow-lg shadow-[#0891B2]/20 transition duration-150 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full bg-gradient-to-r from-[#D80408] to-[#0EA5E9] hover:opacity-95 active:scale-[0.98] disabled:scale-100 disabled:opacity-50 text-white font-bold py-3 rounded-xl shadow-lg shadow-[#D80408]/20 transition duration-150 flex items-center justify-center gap-2 cursor-pointer"
           >
             {loading ? (
               <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

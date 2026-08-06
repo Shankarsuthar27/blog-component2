@@ -6,7 +6,7 @@
   --color-cardBg: #FFFFFF;
   --color-primaryDark: #0F172A;
   --color-secondaryDark: #1E293B;
-  --color-primaryAccent: #0891B2;
+  --color-primaryAccent: #D80408;
   --color-secondaryAccent: #06B6D4;
   --color-buttonAccent: #F97316;
   --color-mainText: #111827;
@@ -124,7 +124,7 @@
 }
 
 .ProseMirror blockquote {
-  border-left: 4px solid #0891b2;
+  border-left: 4px solid #D80408;
   padding-left: 1rem;
   font-style: italic;
   color: #475569;

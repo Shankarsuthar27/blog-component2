@@ -185,7 +185,7 @@ export const BlogDetailsPage: React.FC = () => {
       <div className="min-h-screen flex flex-col bg-[#F8FAFC]">
         <Header />
         <main className="flex-grow flex items-center justify-center">
-          <Loader2 className="animate-spin text-[#0891B2]" size={40} />
+          <Loader2 className="animate-spin text-[#D80408]" size={40} />
         </main>
         <Footer />
       </div>
@@ -203,7 +203,7 @@ export const BlogDetailsPage: React.FC = () => {
             <p className="text-[#64748B] mb-8">The article you're looking for doesn't exist or has been moved.</p>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 bg-[#0891B2] hover:bg-[#0e7490] text-white font-medium px-6 py-3 rounded-xl transition-colors"
+              className="inline-flex items-center gap-2 bg-[#D80408] hover:bg-[#0e7490] text-white font-medium px-6 py-3 rounded-xl transition-colors"
             >
               <ArrowLeft size={16} />
               Back to Blog
@@ -247,14 +247,14 @@ export const BlogDetailsPage: React.FC = () => {
               {/* Back Button */}
               <button
                 onClick={() => navigate(-1)}
-                className="inline-flex items-center gap-2 text-sm text-[#64748B] hover:text-[#0891B2] transition-colors mb-8 group"
+                className="inline-flex items-center gap-2 text-sm text-[#64748B] hover:text-[#D80408] transition-colors mb-8 group"
               >
                 <ArrowLeft size={15} className="group-hover:-translate-x-0.5 transition-transform" />
                 Back to Blog
               </button>
 
               {/* Category */}
-              <span className="inline-block bg-cyan-50 text-[#0891B2] text-xs font-semibold px-3 py-1.5 rounded-full border border-cyan-200 uppercase tracking-wider mb-5">
+              <span className="inline-block bg-cyan-50 text-[#D80408] text-xs font-semibold px-3 py-1.5 rounded-full border border-cyan-200 uppercase tracking-wider mb-5">
                 <Tag size={10} className="inline mr-1" />{post.category}
               </span>
 
@@ -286,13 +286,13 @@ export const BlogDetailsPage: React.FC = () => {
               </div>
 
               {/* Excerpt */}
-              <p className="text-lg text-[#64748B] leading-relaxed border-l-4 border-[#0891B2] pl-5 mb-10 italic">
+              <p className="text-lg text-[#64748B] leading-relaxed border-l-4 border-[#D80408] pl-5 mb-10 italic">
                 {post.excerpt}
               </p>
 
               {/* Article Content — rendered as HTML from TipTap */}
               <div
-                className="prose prose-slate max-w-none prose-headings:font-serif prose-a:text-[#0891B2] prose-img:rounded-xl"
+                className="prose prose-slate max-w-none prose-headings:font-serif prose-a:text-[#D80408] prose-img:rounded-xl"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
 
@@ -303,7 +303,7 @@ export const BlogDetailsPage: React.FC = () => {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs bg-slate-100 text-[#64748B] px-3 py-1.5 rounded-full hover:bg-cyan-50 hover:text-[#0891B2] transition-colors cursor-pointer"
+                      className="text-xs bg-slate-100 text-[#64748B] px-3 py-1.5 rounded-full hover:bg-cyan-50 hover:text-[#D80408] transition-colors cursor-pointer"
                     >
                       #{tag}
                     </span>
@@ -314,7 +314,7 @@ export const BlogDetailsPage: React.FC = () => {
               {/* Social Share Bar */}
               <div className="flex flex-wrap items-center gap-3 mt-8 pt-8 border-t border-slate-100">
                 <span className="text-xs font-bold text-[#0F172A] uppercase tracking-wider flex items-center gap-1.5 mr-1">
-                  <Share2 size={14} className="text-[#0891B2]" /> Share Article:
+                  <Share2 size={14} className="text-[#D80408]" /> Share Article:
                 </span>
 
                 {/* X / Twitter */}
@@ -371,7 +371,7 @@ export const BlogDetailsPage: React.FC = () => {
                   className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer shadow-2xs border ${
                     copiedLink
                       ? 'bg-emerald-50 text-emerald-600 border-emerald-200'
-                      : 'bg-slate-100 text-[#64748B] hover:bg-[#0891B2] hover:text-white border-transparent'
+                      : 'bg-slate-100 text-[#64748B] hover:bg-[#D80408] hover:text-white border-transparent'
                   }`}
                   title="Copy link to clipboard"
                   aria-label="Copy link"
@@ -386,7 +386,7 @@ export const BlogDetailsPage: React.FC = () => {
           {/* Comments Section */}
           <section className="max-w-3xl mx-auto mb-16">
             <h2 className="font-serif text-2xl font-bold text-[#0F172A] mb-8 flex items-center gap-2">
-              <MessageSquare size={22} className="text-[#0891B2]" />
+              <MessageSquare size={22} className="text-[#D80408]" />
               {comments.length > 0 ? `${comments.length} Comment${comments.length !== 1 ? 's' : ''}` : 'Comments'}
             </h2>
 
@@ -401,7 +401,7 @@ export const BlogDetailsPage: React.FC = () => {
                     className="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0891B2] to-[#0369A1] flex items-center justify-center text-white font-bold text-sm">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D80408] to-[#0369A1] flex items-center justify-center text-white font-bold text-sm">
                         {comment.name.charAt(0).toUpperCase()}
                       </div>
                       <div>
@@ -440,7 +440,7 @@ export const BlogDetailsPage: React.FC = () => {
                         value={commentName}
                         onChange={(e) => setCommentName(e.target.value)}
                         placeholder="Your name"
-                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0891B2] transition"
+                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#D80408] transition"
                       />
                     </div>
                     <div>
@@ -451,7 +451,7 @@ export const BlogDetailsPage: React.FC = () => {
                         value={commentEmail}
                         onChange={(e) => setCommentEmail(e.target.value)}
                         placeholder="your@email.com (private)"
-                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0891B2] transition"
+                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#D80408] transition"
                       />
                     </div>
                   </div>
@@ -464,7 +464,7 @@ export const BlogDetailsPage: React.FC = () => {
                       value={commentText}
                       onChange={(e) => setCommentText(e.target.value)}
                       placeholder="Share your thoughts on this article..."
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#0891B2] transition resize-none leading-relaxed"
+                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#D80408] transition resize-none leading-relaxed"
                     />
                   </div>
 
@@ -473,7 +473,7 @@ export const BlogDetailsPage: React.FC = () => {
                     <button
                       type="submit"
                       disabled={commentSubmitting}
-                      className="inline-flex items-center gap-2 bg-[#0891B2] hover:bg-[#0e7490] disabled:opacity-60 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all"
+                      className="inline-flex items-center gap-2 bg-[#D80408] hover:bg-[#0e7490] disabled:opacity-60 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-all"
                     >
                       {commentSubmitting ? <Loader2 size={15} className="animate-spin" /> : <Send size={15} />}
                       {commentSubmitting ? 'Submitting...' : 'Post Comment'}
@@ -493,7 +493,7 @@ export const BlogDetailsPage: React.FC = () => {
                 </h2>
                 <Link
                   to="/"
-                  className="text-sm font-medium text-[#0891B2] hover:text-[#F97316] transition-colors"
+                  className="text-sm font-medium text-[#D80408] hover:text-[#F97316] transition-colors"
                 >
                   View All →
                 </Link>

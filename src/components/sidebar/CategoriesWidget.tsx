@@ -79,15 +79,15 @@ export const CategoriesWidget: React.FC<Props> = ({ selectedCategory, onSelect }
                 onClick={() => onSelect(isActive ? '' : cat.name)}
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 group ${
                   isActive
-                    ? 'bg-[#0891B2] text-white'
-                    : 'text-[#64748B] hover:bg-cyan-50 hover:text-[#0891B2]'
+                    ? 'bg-[#D80408] text-white'
+                    : 'text-[#64748B] hover:bg-cyan-50 hover:text-[#D80408]'
                 }`}
                 aria-pressed={isActive}
               >
                 <span className="flex items-center gap-2">
                   <Tag
                     size={13}
-                    className={isActive ? 'text-white' : 'text-[#0891B2]'}
+                    className={isActive ? 'text-white' : 'text-[#D80408]'}
                   />
                   {cat.name}
                 </span>
@@ -95,7 +95,7 @@ export const CategoriesWidget: React.FC<Props> = ({ selectedCategory, onSelect }
                   className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
                     isActive
                       ? 'bg-white/20 text-white'
-                      : 'bg-slate-100 text-[#64748B] group-hover:bg-cyan-100 group-hover:text-[#0891B2]'
+                      : 'bg-slate-100 text-[#64748B] group-hover:bg-cyan-100 group-hover:text-[#D80408]'
                   }`}
                 >
                   {cat.count}

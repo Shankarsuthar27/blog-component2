@@ -46,7 +46,7 @@ export const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageCha
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-slate-200 text-[#64748B] bg-white hover:bg-[#0891B2] hover:text-white hover:border-[#0891B2] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-[#64748B] disabled:hover:border-slate-200 transition-all duration-200"
+        className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-slate-200 text-[#64748B] bg-white hover:bg-[#D80408] hover:text-white hover:border-[#D80408] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-[#64748B] disabled:hover:border-slate-200 transition-all duration-200"
         aria-label="Previous page"
       >
         <ChevronLeft size={15} />
@@ -67,7 +67,7 @@ export const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageCha
             aria-current={currentPage === page ? 'page' : undefined}
             className={`w-9 h-9 text-sm font-medium rounded-lg border transition-all duration-200 ${
               currentPage === page
-                ? 'bg-[#0891B2] text-white border-[#0891B2] shadow-sm'
+                ? 'bg-[#D80408] text-white border-[#D80408] shadow-sm'
                 : 'bg-white text-[#64748B] border-slate-200 hover:bg-slate-50 hover:text-[#0F172A]'
             }`}
           >
@@ -80,7 +80,7 @@ export const Pagination: React.FC<Props> = ({ currentPage, totalPages, onPageCha
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-slate-200 text-[#64748B] bg-white hover:bg-[#0891B2] hover:text-white hover:border-[#0891B2] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-[#64748B] disabled:hover:border-slate-200 transition-all duration-200"
+        className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-lg border border-slate-200 text-[#64748B] bg-white hover:bg-[#D80408] hover:text-white hover:border-[#D80408] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-[#64748B] disabled:hover:border-slate-200 transition-all duration-200"
         aria-label="Next page"
       >
         <span className="hidden sm:inline">Next</span>

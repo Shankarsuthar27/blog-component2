@@ -30,7 +30,7 @@ export const RecentPostsWidget: React.FC<Props> = ({ posts }) => {
                 />
               </div>
               <div className="flex flex-col justify-center min-w-0">
-                <p className="text-sm font-semibold text-[#0F172A] line-clamp-2 group-hover:text-[#0891B2] transition-colors leading-snug">
+                <p className="text-sm font-semibold text-[#0F172A] line-clamp-2 group-hover:text-[#D80408] transition-colors leading-snug">
                   {post.title}
                 </p>
                 <span className="flex items-center gap-1 text-xs text-[#94A3B8] mt-1">

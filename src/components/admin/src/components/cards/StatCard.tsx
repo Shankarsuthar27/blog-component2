@@ -37,10 +37,10 @@ export const StatCard: React.FC<Props> = ({ title, value, icon, trend, className
     <motion.div
       whileHover={{ y: -2, scale: 1.01 }}
       transition={{ duration: 0.2 }}
-      className={`bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-slate-800 rounded-2xl p-6 shadow-xs hover:shadow-md hover:border-[#0891B2]/40 transition-all duration-300 flex flex-col justify-between min-h-[140px] group relative overflow-hidden ${className}`}
+      className={`bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-slate-800 rounded-2xl p-6 shadow-xs hover:shadow-md hover:border-[#D80408]/40 transition-all duration-300 flex flex-col justify-between min-h-[140px] group relative overflow-hidden ${className}`}
     >
       {/* Subtle cyan glow on hover */}
-      <div className="absolute -top-12 -right-12 w-24 h-24 bg-[#0891B2]/5 rounded-full blur-xl group-hover:bg-[#0891B2]/10 transition duration-300 pointer-events-none" />
+      <div className="absolute -top-12 -right-12 w-24 h-24 bg-[#D80408]/5 rounded-full blur-xl group-hover:bg-[#D80408]/10 transition duration-300 pointer-events-none" />
 
       <div className="flex items-start justify-between relative z-10">
         <div>
@@ -49,7 +49,7 @@ export const StatCard: React.FC<Props> = ({ title, value, icon, trend, className
             {value}
           </p>
         </div>
-        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#ECFEFF] to-[#CFFAFE] dark:from-slate-800 dark:to-slate-800 flex items-center justify-center text-[#0891B2] dark:text-cyan-400 ring-1 ring-[#0891B2]/20 shadow-2xs shrink-0">
+        <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#ECFEFF] to-[#CFFAFE] dark:from-slate-800 dark:to-slate-800 flex items-center justify-center text-[#D80408] dark:text-cyan-400 ring-1 ring-[#D80408]/20 shadow-2xs shrink-0">
           <Icon size={20} />
         </div>
       </div>

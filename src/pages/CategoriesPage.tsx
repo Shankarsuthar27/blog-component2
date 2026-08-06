@@ -71,7 +71,7 @@ export const CategoriesPage: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-center max-w-3xl mx-auto mb-16 space-y-4"
           >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ECFEFF] text-[#0891B2] border border-[#CFFAFE]">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ECFEFF] text-[#D80408] border border-[#CFFAFE]">
               <FolderTree size={12} /> Topic Categories
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#0F172A] leading-tight">
@@ -85,7 +85,7 @@ export const CategoriesPage: React.FC = () => {
           {/* Loader */}
           {isLoading && (
             <div className="flex justify-center items-center py-24">
-              <Loader2 className="animate-spin text-[#0891B2]" size={36} />
+              <Loader2 className="animate-spin text-[#D80408]" size={36} />
             </div>
           )}
 
@@ -99,13 +99,13 @@ export const CategoriesPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
                   whileHover={{ y: -6 }}
-                  className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs flex flex-col justify-between group hover:border-[#0891B2]/40 transition-all duration-300"
+                  className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs flex flex-col justify-between group hover:border-[#D80408]/40 transition-all duration-300"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span
                         className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold shadow-sm"
-                        style={{ backgroundColor: cat.color || '#0891b2' }}
+                        style={{ backgroundColor: cat.color || '#D80408' }}
                       >
                         <Tag size={18} />
                       </span>
@@ -115,7 +115,7 @@ export const CategoriesPage: React.FC = () => {
                     </div>
 
                     <div>
-                      <h3 className="font-serif text-2xl font-bold text-[#0F172A] group-hover:text-[#0891B2] transition-colors">
+                      <h3 className="font-serif text-2xl font-bold text-[#0F172A] group-hover:text-[#D80408] transition-colors">
                         {cat.name}
                       </h3>
                       <p className="text-xs text-[#64748B] mt-2 leading-relaxed line-clamp-3">
@@ -127,7 +127,7 @@ export const CategoriesPage: React.FC = () => {
                   <div className="pt-6 mt-6 border-t border-slate-100">
                     <Link
                       to={`/?search=${encodeURIComponent(cat.name)}`}
-                      className="inline-flex items-center gap-2 text-xs font-bold text-[#0891B2] group-hover:gap-3 transition-all"
+                      className="inline-flex items-center gap-2 text-xs font-bold text-[#D80408] group-hover:gap-3 transition-all"
                     >
                       View Category Posts <ArrowRight size={14} />
                     </Link>

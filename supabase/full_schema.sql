@@ -22,7 +22,7 @@ create table if not exists public.categories (
     name text not null unique,
     slug text not null unique,
     description text,
-    color text default '#0891b2',
+    color text default '#D80408',
     created_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
 

@@ -27,7 +27,7 @@ export const PopularPostsWidget: React.FC<Props> = ({ posts }) => {
             <div className="min-w-0">
               <Link
                 to={`/blog/${post.slug}`}
-                className="text-sm font-semibold text-[#0F172A] line-clamp-2 group-hover:text-[#0891B2] transition-colors leading-snug block"
+                className="text-sm font-semibold text-[#0F172A] line-clamp-2 group-hover:text-[#D80408] transition-colors leading-snug block"
               >
                 {post.title}
               </Link>

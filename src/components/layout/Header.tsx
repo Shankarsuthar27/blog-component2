@@ -75,7 +75,7 @@ export const Header: React.FC = () => {
               className="h-10 md:h-11 w-auto object-contain transition-transform hover:scale-105"
             />
             <span className="font-serif font-bold text-xl text-[#0F172A] tracking-tight">
-              Daily <span className="text-[#0891B2]">Bharat</span>
+              Daily <span className="text-[#D80408]">Bharat</span>
             </span>
           </Link>
 
@@ -88,7 +88,7 @@ export const Header: React.FC = () => {
                 className={({ isActive }) =>
                   `relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
                     isActive && link.to === '/'
-                      ? 'text-[#0891B2] bg-cyan-50'
+                      ? 'text-[#D80408] bg-cyan-50'
                       : 'text-[#64748B] hover:text-[#0F172A] hover:bg-slate-50'
                   }`
                 }
@@ -102,7 +102,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-2">
             <Link
               to="/admin"
-              className="w-9 h-9 md:w-auto md:h-auto flex items-center justify-center gap-2 rounded-lg text-[#64748B] hover:text-[#0891B2] hover:bg-cyan-50 md:border md:border-cyan-200/60 md:px-3.5 md:py-2 text-sm font-medium transition-colors"
+              className="w-9 h-9 md:w-auto md:h-auto flex items-center justify-center gap-2 rounded-lg text-[#64748B] hover:text-[#D80408] hover:bg-cyan-50 md:border md:border-cyan-200/60 md:px-3.5 md:py-2 text-sm font-medium transition-colors"
               aria-label="Admin Dashboard"
               title="Admin Dashboard"
             >
@@ -111,13 +111,13 @@ export const Header: React.FC = () => {
             </Link>
             <button
               onClick={() => setShowSearch(!showSearch)}
-              className="w-9 h-9 flex items-center justify-center rounded-lg text-[#64748B] hover:text-[#0891B2] hover:bg-cyan-50 transition-colors"
+              className="w-9 h-9 flex items-center justify-center rounded-lg text-[#64748B] hover:text-[#D80408] hover:bg-cyan-50 transition-colors"
               aria-label="Search"
             >
               <Search size={18} />
             </button>
             <button
-              className="hidden md:flex items-center gap-2 bg-[#0891B2] hover:bg-[#0e7490] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+              className="hidden md:flex items-center gap-2 bg-[#D80408] hover:bg-[#0e7490] text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
             >
               Subscribe
             </button>
@@ -179,12 +179,12 @@ export const Header: React.FC = () => {
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
                     placeholder="Search articles, topics, authors…"
-                    className="w-full pl-9 pr-4 py-2.5 border border-slate-200 rounded-lg text-sm text-[#111827] placeholder-[#94A3B8] focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/20 transition"
+                    className="w-full pl-9 pr-4 py-2.5 border border-slate-200 rounded-lg text-sm text-[#111827] placeholder-[#94A3B8] focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/20 transition"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="bg-[#0891B2] hover:bg-[#0e7490] text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors shrink-0"
+                  className="bg-[#D80408] hover:bg-[#0e7490] text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors shrink-0"
                 >
                   Search
                 </button>
@@ -247,7 +247,7 @@ export const Header: React.FC = () => {
                       className={({ isActive }) =>
                         `block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                           isActive && link.to === '/'
-                            ? 'bg-cyan-50 text-[#0891B2]'
+                            ? 'bg-cyan-50 text-[#D80408]'
                             : 'text-[#64748B] hover:bg-slate-50 hover:text-[#0F172A]'
                         }`
                       }
@@ -273,7 +273,7 @@ export const Header: React.FC = () => {
                 </motion.div>
               </div>
               <div className="p-5 border-t border-slate-100">
-                <button className="w-full bg-[#0891B2] hover:bg-[#0e7490] text-white text-sm font-medium py-3 rounded-xl transition-colors">
+                <button className="w-full bg-[#D80408] hover:bg-[#0e7490] text-white text-sm font-medium py-3 rounded-xl transition-colors">
                   Subscribe to Newsletter
                 </button>
               </div>

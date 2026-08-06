@@ -159,12 +159,12 @@ export const BlogPage: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <div className="inline-flex items-center gap-2 bg-cyan-50 border border-cyan-200 text-[#0891B2] text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-cyan-50 border border-cyan-200 text-[#D80408] text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
             <Rss size={12} />
             Latest Articles & Insights
           </div>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-3">
-            Explore the <span className="text-[#0891B2]">Daily Bharat</span>
+            Explore the <span className="text-[#D80408]">Daily Bharat</span>
           </h1>
           <p className="text-[#64748B] text-base md:text-lg max-w-2xl mx-auto">
             Thoughtful articles on web development, design, technology, and the ideas shaping the modern web.
@@ -187,7 +187,7 @@ export const BlogPage: React.FC = () => {
           >
             <span className="text-sm text-[#64748B]">Filtering by:</span>
             {searchTerm && (
-              <span className="inline-flex items-center gap-1.5 bg-cyan-50 border border-cyan-200 text-[#0891B2] text-xs font-semibold px-3 py-1.5 rounded-full">
+              <span className="inline-flex items-center gap-1.5 bg-cyan-50 border border-cyan-200 text-[#D80408] text-xs font-semibold px-3 py-1.5 rounded-full">
                 Search: "{searchTerm}"
                 <button
                   onClick={() => setSearchTerm('')}
@@ -197,7 +197,7 @@ export const BlogPage: React.FC = () => {
               </span>
             )}
             {selectedCategory && (
-              <span className="inline-flex items-center gap-1.5 bg-cyan-50 border border-cyan-200 text-[#0891B2] text-xs font-semibold px-3 py-1.5 rounded-full">
+              <span className="inline-flex items-center gap-1.5 bg-cyan-50 border border-cyan-200 text-[#D80408] text-xs font-semibold px-3 py-1.5 rounded-full">
                 Category: {selectedCategory}
                 <button
                   onClick={() => setSelectedCategory('')}
