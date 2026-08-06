@@ -76,7 +76,7 @@ export const Sidebar: React.FC = () => {
               </div>
               {sidebarOpen && (
                 <span className="font-serif font-bold text-lg text-[#0F172A] dark:text-white tracking-tight">
-                  Insight<span className="text-[#0891B2]">CMS</span>
+                  Daily<span className="text-[#0891B2]">Bharat</span>
                 </span>
               )}
             </div>

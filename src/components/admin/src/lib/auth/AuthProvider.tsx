@@ -81,7 +81,7 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       return (created as Profile) || {
         id: userId,
         email: user?.email || 'admin@insightjournal.com',
-        full_name: 'Insight Admin',
+        full_name: 'Daily Bharat Admin',
         avatar: null,
         role: 'superadmin',
         created_at: new Date().toISOString()
@@ -91,7 +91,7 @@ export const AuthProvider: React.FC<Props> = ({ children }) => {
       return {
         id: userId,
         email: 'admin@insightjournal.com',
-        full_name: 'Insight Admin',
+        full_name: 'Daily Bharat Admin',
         avatar: null,
         role: 'superadmin',
         created_at: new Date().toISOString()

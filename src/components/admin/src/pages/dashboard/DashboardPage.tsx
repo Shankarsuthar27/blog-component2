@@ -40,7 +40,7 @@ export const DashboardPage: React.FC = () => {
             Dashboard Overview
           </h1>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-            Realtime operations monitoring center for Insight Journal.
+            Realtime operations monitoring center for Daily Bharat.
           </p>
         </div>
         <div className="flex gap-3">

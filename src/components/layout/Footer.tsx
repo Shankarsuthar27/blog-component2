@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
                   <BookOpen size={18} className="text-white" strokeWidth={2.5} />
                 </div>
                 <span className="font-serif font-bold text-xl tracking-tight">
-                  Insight <span className="text-[#06B6D4]">Journal</span>
+                  Daily <span className="text-[#06B6D4]">Bharat</span>
                 </span>
               </Link>
               <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -182,7 +182,7 @@ export const Footer: React.FC = () => {
           {/* Bottom Bar */}
           <div className="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-slate-500 text-sm text-center sm:text-left">
-              © 2026 Insight Journal. All rights reserved.
+              © 2026 Daily Bharat. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-slate-500">
               <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>

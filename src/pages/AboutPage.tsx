@@ -21,13 +21,13 @@ export const AboutPage: React.FC = () => {
             className="text-center max-w-3xl mx-auto mb-16 space-y-4"
           >
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#ECFEFF] text-[#0891B2] border border-[#CFFAFE]">
-              <Sparkles size={12} /> About Insight Journal
+              <Sparkles size={12} /> About Daily Bharat
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#0F172A] leading-tight">
               Inspiring the Next Generation of Tech & Design Innovators
             </h1>
             <p className="text-base md:text-lg text-[#64748B] leading-relaxed">
-              Insight Journal is an independent digital publication devoted to technical architecture, design systems, software engineering best practices, and modern SaaS ecosystems.
+              Daily Bharat is an independent digital publication devoted to technical architecture, design systems, software engineering best practices, and modern SaaS ecosystems.
             </p>
           </motion.div>
 

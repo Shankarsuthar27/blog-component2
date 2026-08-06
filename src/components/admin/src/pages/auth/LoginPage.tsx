@@ -110,7 +110,7 @@ export const LoginPage: React.FC = () => {
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0891B2] to-[#0EA5E9] flex items-center justify-center shadow-lg shadow-[#0891B2]/20 mb-4 animate-pulse">
             <BookOpen className="text-white" size={24} />
           </div>
-          <h1 className="font-serif text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">Insight Journal</h1>
+          <h1 className="font-serif text-2xl font-bold text-[#0F172A] dark:text-white tracking-tight">Daily Bharat</h1>
           <p className="text-[#64748B] text-sm mt-1">CMS Control Room</p>
         </div>
 

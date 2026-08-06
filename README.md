@@ -1,4 +1,4 @@
-# 📰 Insight Journal — Modern Responsive Blog Website
+# 📰 Daily Bharat — Modern Responsive Tech & News Platform
 
 > A production-ready, fully responsive blog website built with **React 19**, **TypeScript**, **Tailwind CSS v4**, **Framer Motion**, and **React Router DOM**. Features a modern editorial design with real-time search, category filtering, animated UI components, and a complete blog detail view.
 

@@ -1,5 +1,5 @@
 -- ==========================================
--- INSIGHT JOURNAL COMPLETE SUPABASE SCHEMA
+-- DAILY BHARAT COMPLETE SUPABASE SCHEMA
 -- Idempotent (safe to re-run multiple times)
 -- ==========================================
 
@@ -242,10 +242,10 @@ create trigger on_auth_user_created
 
 -- Seed Default Settings
 insert into public.settings (key, value) values
-    ('website_name', '"Insight Journal"'),
-    ('footer_text', '"© 2026 Insight Journal. All rights reserved."'),
-    ('seo_default_title', '"Insight Journal — Modern Tech & Design Blog"'),
-    ('seo_default_description', '"High-quality technical guides, web architectures, and premium UI/UX inspirations."'),
+    ('website_name', '"Daily Bharat"'),
+    ('footer_text', '"© 2026 Daily Bharat. All rights reserved."'),
+    ('seo_default_title', '"Daily Bharat — Modern Tech & News Platform"'),
+    ('seo_default_description', '"High-quality technical guides, web architectures, and daily inspirations."'),
     ('comment_moderation_enabled', 'true'),
     ('maintenance_mode', 'false'),
     ('social_links', '{"facebook": "", "twitter": "", "instagram": "", "linkedin": "", "github": ""}')

@@ -32,7 +32,7 @@ function transformBlog(row: any, categories: any[]): BlogPost {
       : 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=800',
     category: category?.name || 'General',
     author: {
-      name: row.author_name || 'Insight Journal',
+      name: row.author_name || 'Daily Bharat',
       avatar: row.author_avatar || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100',
       bio: row.author_bio || '',
     },
@@ -164,7 +164,7 @@ export const BlogPage: React.FC = () => {
             Latest Articles & Insights
           </div>
           <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-3">
-            Explore the <span className="text-[#0891B2]">Insight Journal</span>
+            Explore the <span className="text-[#0891B2]">Daily Bharat</span>
           </h1>
           <p className="text-[#64748B] text-base md:text-lg max-w-2xl mx-auto">
             Thoughtful articles on web development, design, technology, and the ideas shaping the modern web.

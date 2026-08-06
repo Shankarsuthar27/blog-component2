@@ -73,7 +73,7 @@ export const Header: React.FC = () => {
               <BookOpen size={18} className="text-white" strokeWidth={2.5} />
             </div>
             <span className="font-serif font-bold text-xl text-[#0F172A] tracking-tight">
-              Insight <span className="text-[#0891B2]">Journal</span>
+              Daily <span className="text-[#0891B2]">Bharat</span>
             </span>
           </Link>
 

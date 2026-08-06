@@ -6,7 +6,7 @@ export const SettingsPage: React.FC = () => {
   const { data: settings, isLoading } = useSettings();
   const saveSettings = useSaveSettings();
 
-  const [websiteName, setWebsiteName] = useState('Insight Journal');
+  const [websiteName, setWebsiteName] = useState('Daily Bharat');
   const [footerText, setFooterText] = useState('');
   const [seoTitle, setSeoTitle] = useState('');
   const [seoDesc, setSeoDesc] = useState('');
@@ -22,7 +22,7 @@ export const SettingsPage: React.FC = () => {
   // Populate form when settings load
   useEffect(() => {
     if (settings) {
-      setWebsiteName(settings.website_name || 'Insight Journal');
+      setWebsiteName(settings.website_name || 'Daily Bharat');
       setFooterText(settings.footer_text || '');
       setSeoTitle(settings.seo_default_title || '');
       setSeoDesc(settings.seo_default_description || '');

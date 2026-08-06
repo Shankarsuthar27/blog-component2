@@ -282,22 +282,22 @@ export const mockSubscribers: NewsletterSubscriber[] = [
 ];
 
 export const mockSettings: SystemSettings = {
-  website_name: 'Insight Journal',
+  website_name: 'Daily Bharat',
   logo: null,
   favicon: null,
-  footer_text: '© 2026 Insight Journal. All rights reserved.',
+  footer_text: '© 2026 Daily Bharat. All rights reserved.',
   social_links: {
-    facebook: 'https://facebook.com/insightjournal',
-    twitter: 'https://twitter.com/insightjournal',
-    instagram: 'https://instagram.com/insightjournal',
-    linkedin: 'https://linkedin.com/company/insightjournal',
-    github: 'https://github.com/insightjournal'
+    facebook: 'https://facebook.com/dailybharat',
+    twitter: 'https://twitter.com/dailybharat',
+    instagram: 'https://instagram.com/dailybharat',
+    linkedin: 'https://linkedin.com/company/dailybharat',
+    github: 'https://github.com/dailybharat'
   },
-  seo_default_title: 'Insight Journal — Modern Tech & Design Blog',
-  seo_default_description: 'High-quality technical guides, web architectures, and premium UI/UX inspirations.',
+  seo_default_title: 'Daily Bharat — Modern Tech & News Platform',
+  seo_default_description: 'High-quality technical guides, web architectures, and daily inspirations.',
   google_analytics_id: 'G-2468101214',
   comment_moderation_enabled: true,
-  newsletter_welcome_subject: 'Welcome to the Insight Journal newsletter!',
+  newsletter_welcome_subject: 'Welcome to the Daily Bharat newsletter!',
   maintenance_mode: false
 };
 

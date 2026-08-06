@@ -113,8 +113,8 @@ export const BlogEditorPage: React.FC = () => {
     setTimeout(() => {
       const cleanSlug = slugify(title);
       setSlug(cleanSlug);
-      setSeoTitle(`${title} | Insight Journal`);
-      setSeoDescription(excerpt ? excerpt.slice(0, 155) : `Read the complete article on ${title} at Insight Journal.`);
+      setSeoTitle(`${title} | Daily Bharat`);
+      setSeoDescription(excerpt ? excerpt.slice(0, 155) : `Read the complete article on ${title} at Daily Bharat.`);
       toast.success('SEO & Slug parameters auto-filled!');
     }, 800);
   };

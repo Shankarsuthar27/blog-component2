@@ -28,7 +28,7 @@ function transformBlog(row: any, categories: any[]): BlogPost {
       : 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=1200',
     category: category?.name || 'General',
     author: {
-      name: profile?.full_name || 'Insight Journal',
+      name: profile?.full_name || 'Daily Bharat',
       avatar: profile?.avatar || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100',
       bio: '',
     },
