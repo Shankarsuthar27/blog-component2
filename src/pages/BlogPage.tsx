@@ -16,7 +16,7 @@ import { Rss } from 'lucide-react';
 import { supabase } from '../lib/supabase/client';
 import type { BlogPost } from '../types/blog';
 
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 3;
 
 // Transform Supabase blog row → BlogPost type for UI components
 function transformBlog(row: any, categories: any[]): BlogPost {
@@ -157,49 +157,15 @@ export const BlogPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
-          <h1 className="mt-8 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-3">
+          
+          <h1 className="mt-10 font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-[#0F172A] mb-3">
             Explore the <span className="text-[#D80408]">Daily Bharat</span>
           </h1>
-          <p className="text-[#64748B] text-base md:text-lg max-w-2xl mx-auto mb-6">
+          <p className="text-[#64748B] text-base md:text-lg max-w-2xl mx-auto">
             Thoughtful articles on web development, design, technology, and the ideas shaping the modern web.
           </p>
-
-          {/* Quick Category Navigation Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-2 pb-4">
-            <button
-              onClick={() => handleCategorySelect('')}
-              className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border ${
-                !selectedCategory
-                  ? 'bg-[#D80408] text-white border-[#D80408] shadow-sm'
-                  : 'bg-white text-[#64748B] border-slate-200 hover:border-[#D80408] hover:text-[#D80408]'
-              }`}
-            >
-              All Articles
-            </button>
-
-            {categories.map((c) => {
-              const isSelected = selectedCategory === c.name;
-              return (
-                <button
-                  key={c.id}
-                  onClick={() => handleCategorySelect(c.name)}
-                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border flex items-center gap-1.5 ${
-                    isSelected
-                      ? 'bg-[#D80408] text-white border-[#D80408] shadow-sm'
-                      : 'bg-white text-[#64748B] border-slate-200 hover:border-[#D80408] hover:text-[#D80408]'
-                  }`}
-                >
-                  <span
-                    className="w-2 h-2 rounded-full inline-block"
-                    style={{ backgroundColor: c.color || '#D80408' }}
-                  />
-                  {c.name}
-                </button>
-              );
-            })}
-          </div>
         </motion.div>
 
         {/* Featured Post */}

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogDetailsPage } from './pages/BlogDetailsPage';
 import { AboutPage } from './pages/AboutPage';
@@ -40,7 +41,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<BlogPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/categories" element={<PublicCategoriesPage />} />

@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchValue.trim()) {
-      navigate(`/?search=${encodeURIComponent(searchValue.trim())}`);
+      navigate(`/blog?search=${encodeURIComponent(searchValue.trim())}`);
       setShowSearch(false);
       setSearchValue('');
     }
@@ -85,10 +85,11 @@ export const Header: React.FC = () => {
               <NavLink
                 key={link.label}
                 to={link.to}
+                end={link.to === '/'}
                 className={({ isActive }) =>
                   `relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                    isActive && link.to === '/'
-                      ? 'text-[#D80408] bg-cyan-50'
+                    isActive
+                      ? 'text-[#D80408] bg-red-50 font-semibold'
                       : 'text-[#64748B] hover:text-[#0F172A] hover:bg-slate-50'
                   }`
                 }
