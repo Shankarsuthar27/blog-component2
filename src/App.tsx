@@ -41,10 +41,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<BlogPage />} />
-        <Route path="/blog/:slug" element={<BlogDetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/categories" element={<PublicCategoriesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailsPage />} />
         
         {/* Admin Router Scope */}
         <Route
