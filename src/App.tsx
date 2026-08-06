@@ -41,6 +41,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<BlogPage />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/categories" element={<PublicCategoriesPage />} />
         <Route path="/contact" element={<ContactPage />} />
