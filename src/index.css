@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-pageBg: #F8FAFC;
+  --color-cardBg: #FFFFFF;
+  --color-primaryDark: #0F172A;
+  --color-secondaryDark: #1E293B;
+  --color-primaryAccent: #0891B2;
+  --color-secondaryAccent: #06B6D4;
+  --color-buttonAccent: #F97316;
+  --color-mainText: #111827;
+  --color-mutedText: #64748B;
+  --color-borderLight: #E2E8F0;
+
+  /* Fonts */
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-serif: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #F8FAFC;
+    color: #111827;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F1F5F9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+  }
+}
+
+/* Glassmorphism classes */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* TipTap Editor Specific Styles */
+.ProseMirror {
+  outline: none;
+  min-height: 700px;
+  padding: 32px 40px;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  position: relative;
+  display: block;
+  font-size: 18px;
+  line-height: 1.9;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #0F172A;
+}
+
+.ProseMirror p:first-child {
+  margin-top: 0;
+}
+
+.ProseMirror h1, .ProseMirror h2, .ProseMirror h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ProseMirror h1 { font-size: 2rem; }
+.ProseMirror h2 { font-size: 1.5rem; }
+.ProseMirror h3 { font-size: 1.25rem; }
+
+.ProseMirror ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror blockquote {
+  border-left: 4px solid #0891b2;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #475569;
+  margin: 1.5rem 0;
+}
+
+.ProseMirror pre {
+  background-color: #1e293b;
+  color: #f8fafc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-family: monospace;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror table, .prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  display: table;
+}
+
+.ProseMirror th, .ProseMirror td, .prose th, .prose td {
+  border: 1px solid #E2E8F0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.ProseMirror th, .prose th {
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-weight: 700;
+}
+
+.prose tr:nth-child(even) {
+  background-color: #F8FAFC;
+}
