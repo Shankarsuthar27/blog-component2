@@ -72,8 +72,11 @@ export const Header: React.FC = () => {
             <img
               src="/logo.png"
               alt="Daily Bharat Logo"
-              className="h-11 md:h-12 w-auto object-contain transition-transform hover:scale-105"
+              className="h-10 md:h-11 w-auto object-contain transition-transform hover:scale-105"
             />
+            <span className="font-serif font-bold text-xl text-[#0F172A] tracking-tight">
+              Daily <span className="text-[#0891B2]">Bharat</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}

@@ -74,8 +74,13 @@ export const Sidebar: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="Daily Bharat Logo"
-                className="h-10 w-auto object-contain shrink-0"
+                className="h-9 w-auto object-contain shrink-0"
               />
+              {sidebarOpen && (
+                <span className="font-serif font-bold text-base text-[#0F172A] dark:text-white tracking-tight whitespace-nowrap">
+                  Daily<span className="text-[#0891B2]">Bharat</span>
+                </span>
+              )}
             </div>
             <button
               onClick={toggleSidebar}

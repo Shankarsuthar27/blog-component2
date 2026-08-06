@@ -107,11 +107,16 @@ export const LoginPage: React.FC = () => {
       <div className="w-full max-w-[440px] bg-white/95 dark:bg-slate-900/90 backdrop-blur-2xl border border-[#E2E8F0] dark:border-slate-800 rounded-3xl p-8 shadow-xl relative z-10">
         {/* Header Logo */}
         <div className="flex flex-col items-center mb-8">
-          <img
-            src="/logo.png"
-            alt="Daily Bharat Logo"
-            className="h-20 w-auto object-contain mb-3"
-          />
+          <div className="flex items-center gap-3 mb-2">
+            <img
+              src="/logo.png"
+              alt="Daily Bharat Logo"
+              className="h-16 w-auto object-contain"
+            />
+            <span className="font-serif font-bold text-2xl text-[#0F172A] dark:text-white tracking-tight">
+              Daily <span className="text-[#0891B2]">Bharat</span>
+            </span>
+          </div>
           <p className="text-[#64748B] text-xs font-semibold uppercase tracking-wider">CMS Control Room</p>
         </div>
 
