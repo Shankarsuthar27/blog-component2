@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { BlogPage } from './pages/BlogPage';
 import { BlogDetailsPage } from './pages/BlogDetailsPage';
+import { AboutPage } from './pages/AboutPage';
+import { CategoriesPage as PublicCategoriesPage } from './pages/CategoriesPage';
+import { ContactPage } from './pages/ContactPage';
 
 // Admin Imports
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -39,6 +42,9 @@ function App() {
       <Routes>
         <Route path="/" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogDetailsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/categories" element={<PublicCategoriesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         
         {/* Admin Router Scope */}
         <Route
