@@ -84,7 +84,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('heading', { level: 1 })
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Heading 1"
@@ -96,7 +96,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('heading', { level: 2 })
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Heading 2"
@@ -108,7 +108,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('heading', { level: 3 })
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Heading 3"
@@ -126,7 +126,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleBold().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('bold')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Bold (Ctrl+B)"
@@ -138,7 +138,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleItalic().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('italic')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Italic (Ctrl+I)"
@@ -150,7 +150,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleUnderline().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('underline')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Underline (Ctrl+U)"
@@ -162,7 +162,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleStrike().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('strike')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Strikethrough"
@@ -174,7 +174,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleCode().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('code')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Inline Code"
@@ -192,7 +192,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleBulletList().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('bulletList')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Bullet List"
@@ -204,7 +204,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleOrderedList().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('orderedList')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Ordered List"
@@ -216,7 +216,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleBlockquote().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('blockquote')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Blockquote"
@@ -242,7 +242,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={setLink}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('link')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Add Hyperlink (Ctrl+K)"
@@ -252,7 +252,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
           <button
             type="button"
             onClick={onImageClick}
-            className="p-1.5 rounded-xl hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B] hover:text-[#D80408] transition cursor-pointer"
+            className="p-1.5 rounded-xl hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B] hover:text-[#0891B2] transition cursor-pointer"
             title="Insert Image"
           >
             <Image size={15} />
@@ -270,7 +270,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             onClick={() => editor.chain().focus().toggleCodeBlock().run()}
             className={`p-1.5 rounded-xl transition cursor-pointer ${
               editor.isActive('codeBlock')
-                ? 'bg-[#ECFEFF] text-[#D80408] font-bold border border-[#CFFAFE]'
+                ? 'bg-[#ECFEFF] text-[#0891B2] font-bold border border-[#CFFAFE]'
                 : 'hover:bg-[#F8FAFC] dark:hover:bg-slate-800 text-[#64748B]'
             }`}
             title="Code Block"
@@ -285,7 +285,7 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
         <button
           type="button"
           onClick={() => setAiMenuOpen(!aiMenuOpen)}
-          className="px-3 py-1.5 bg-gradient-to-r from-[#D80408] to-[#0EA5E9] hover:opacity-95 text-white text-xs font-semibold rounded-xl flex items-center gap-1.5 shadow-md shadow-[#D80408]/20 cursor-pointer transition"
+          className="px-3 py-1.5 bg-gradient-to-r from-[#0891B2] to-[#0EA5E9] hover:opacity-95 text-white text-xs font-semibold rounded-xl flex items-center gap-1.5 shadow-md shadow-[#0891B2]/20 cursor-pointer transition"
         >
           <Sparkles size={13} className="animate-pulse" />
           <span>AI Writer</span>
@@ -300,37 +300,37 @@ export const EditorToolbar: React.FC<Props> = ({ editor, onImageClick }) => {
             <button
               type="button"
               onClick={() => handleAiAction('Expand')}
-              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#D80408] transition flex items-center gap-2"
+              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#0891B2] transition flex items-center gap-2"
             >
-              <Wand2 size={13} className="text-[#D80408]" /> AI Expand Paragraph
+              <Wand2 size={13} className="text-[#0891B2]" /> AI Expand Paragraph
             </button>
             <button
               type="button"
               onClick={() => handleAiAction('Rewrite')}
-              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#D80408] transition flex items-center gap-2"
+              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#0891B2] transition flex items-center gap-2"
             >
-              <Sparkles size={13} className="text-[#D80408]" /> Rewrite & Polish
+              <Sparkles size={13} className="text-[#0891B2]" /> Rewrite & Polish
             </button>
             <button
               type="button"
               onClick={() => handleAiAction('Summarize')}
-              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#D80408] transition flex items-center gap-2"
+              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#0891B2] transition flex items-center gap-2"
             >
-              <Quote size={13} className="text-[#D80408]" /> Summarize Takeaway
+              <Quote size={13} className="text-[#0891B2]" /> Summarize Takeaway
             </button>
             <button
               type="button"
               onClick={() => handleAiAction('Grammar')}
-              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#D80408] transition flex items-center gap-2"
+              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#0891B2] transition flex items-center gap-2"
             >
-              <Check size={13} className="text-[#D80408]" /> Fix Grammar & Typos
+              <Check size={13} className="text-[#0891B2]" /> Fix Grammar & Typos
             </button>
             <button
               type="button"
               onClick={() => handleAiAction('Continue')}
-              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#D80408] transition flex items-center gap-2"
+              className="w-full px-3.5 py-2 text-left text-xs text-[#0F172A] dark:text-slate-200 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#0891B2] transition flex items-center gap-2"
             >
-              <Sparkles size={13} className="text-[#D80408]" /> Continue Writing
+              <Sparkles size={13} className="text-[#0891B2]" /> Continue Writing
             </button>
           </div>
         )}

@@ -91,7 +91,7 @@ export function DataTable<T>({
       {/* Bulk Action Header bar */}
       {bulkActions && selectedIds.length > 0 && (
         <div className="bg-[#ECFEFF] dark:bg-cyan-950/30 border-b border-[#CFFAFE] dark:border-cyan-800/40 px-4 md:px-6 py-3.5 flex items-center justify-between animate-fade-in">
-          <span className="text-xs font-semibold text-[#D80408] dark:text-cyan-400">
+          <span className="text-xs font-semibold text-[#0891B2] dark:text-cyan-400">
             {selectedIds.length} item{selectedIds.length > 1 ? 's' : ''} selected
           </span>
           <div className="flex gap-2">
@@ -111,7 +111,7 @@ export function DataTable<T>({
                     type="checkbox"
                     checked={data.length > 0 && selectedIds.length === data.length}
                     onChange={toggleSelectAll}
-                    className="rounded border-[#E2E8F0] text-[#D80408] focus:ring-[#D80408]/20 cursor-pointer"
+                    className="rounded border-[#E2E8F0] text-[#0891B2] focus:ring-[#0891B2]/20 cursor-pointer"
                   />
                 </th>
               )}
@@ -170,7 +170,7 @@ export function DataTable<T>({
                             type="checkbox"
                             checked={isSelected}
                             onChange={() => toggleSelectRow(id)}
-                            className="rounded border-[#E2E8F0] text-[#D80408] focus:ring-[#D80408]/20 cursor-pointer"
+                            className="rounded border-[#E2E8F0] text-[#0891B2] focus:ring-[#0891B2]/20 cursor-pointer"
                           />
                         </td>
                       )}

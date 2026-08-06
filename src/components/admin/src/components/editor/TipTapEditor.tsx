@@ -31,7 +31,7 @@ export const TipTapEditor: React.FC<Props> = ({ value, onChange, onWordCountChan
       Link.configure({
         openOnClick: false,
         HTMLAttributes: {
-          class: 'text-[#D80408] underline cursor-pointer font-medium hover:text-[#0EA5E9]',
+          class: 'text-[#0891B2] underline cursor-pointer font-medium hover:text-[#0EA5E9]',
         },
       }),
       Image.configure({
@@ -50,7 +50,7 @@ export const TipTapEditor: React.FC<Props> = ({ value, onChange, onWordCountChan
     content: value || '<p></p>',
     editorProps: {
       attributes: {
-        class: 'prose max-w-none focus:outline-none min-h-[700px] px-8 md:px-10 py-8 text-[18px] leading-[1.9] text-[#0F172A] break-words font-sans selection:bg-[#ECFEFF] selection:text-[#D80408]',
+        class: 'prose max-w-none focus:outline-none min-h-[700px] px-8 md:px-10 py-8 text-[18px] leading-[1.9] text-[#0F172A] break-words font-sans selection:bg-[#ECFEFF] selection:text-[#0891B2]',
       },
     },
     onUpdate: ({ editor }) => {
@@ -87,7 +87,7 @@ export const TipTapEditor: React.FC<Props> = ({ value, onChange, onWordCountChan
   const readingTime = Math.max(1, Math.ceil(wordCount / 200));
 
   return (
-    <div className="border border-[#E2E8F0] bg-white rounded-2xl overflow-hidden shadow-xs focus-within:ring-2 focus-within:ring-[#D80408]/20 focus-within:border-[#D80408] transition duration-200 flex flex-col relative">
+    <div className="border border-[#E2E8F0] bg-white rounded-2xl overflow-hidden shadow-xs focus-within:ring-2 focus-within:ring-[#0891B2]/20 focus-within:border-[#0891B2] transition duration-200 flex flex-col relative">
       
       {/* Grouped Notion/Ghost-style Toolbar (Sticky at top-0 of editor container) */}
       <EditorToolbar 
@@ -104,7 +104,7 @@ export const TipTapEditor: React.FC<Props> = ({ value, onChange, onWordCountChan
       <div className="border-t border-[#E2E8F0] bg-white px-6 py-3 flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-[#64748B]">
         <div className="flex items-center gap-4">
           <span className="flex items-center gap-1.5">
-            <FileText size={14} className="text-[#D80408]" />
+            <FileText size={14} className="text-[#0891B2]" />
             <strong className="text-[#0F172A] font-mono">{wordCount}</strong> Words
           </span>
           <span className="text-[#E2E8F0]">|</span>
@@ -113,7 +113,7 @@ export const TipTapEditor: React.FC<Props> = ({ value, onChange, onWordCountChan
           </span>
           <span className="text-[#E2E8F0]">|</span>
           <span className="flex items-center gap-1.5">
-            <Clock size={14} className="text-[#D80408]" />
+            <Clock size={14} className="text-[#0891B2]" />
             <span>{readingTime} min read</span>
           </span>
         </div>
@@ -123,7 +123,7 @@ export const TipTapEditor: React.FC<Props> = ({ value, onChange, onWordCountChan
             <CheckCircle2 size={13} />
             <span>Autosaved</span>
           </span>
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wider font-bold bg-[#ECFEFF] text-[#D80408] border border-[#CFFAFE]">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wider font-bold bg-[#ECFEFF] text-[#0891B2] border border-[#CFFAFE]">
             {status}
           </span>
         </div>

@@ -63,9 +63,9 @@ export const TopNav: React.FC = () => {
             {/* Command Palette Trigger Search */}
             <button
               onClick={() => setCommandPaletteOpen(true)}
-              className="hidden md:flex items-center gap-2 px-3.5 py-2 bg-[#F8FAFC] dark:bg-slate-800/80 border border-[#E2E8F0] dark:border-slate-700 text-[#64748B] rounded-xl hover:border-[#D80408]/50 hover:bg-white dark:hover:bg-slate-800 transition text-xs cursor-pointer group shadow-xs"
+              className="hidden md:flex items-center gap-2 px-3.5 py-2 bg-[#F8FAFC] dark:bg-slate-800/80 border border-[#E2E8F0] dark:border-slate-700 text-[#64748B] rounded-xl hover:border-[#0891B2]/50 hover:bg-white dark:hover:bg-slate-800 transition text-xs cursor-pointer group shadow-xs"
             >
-              <Icons.Search size={14} className="text-[#64748B] group-hover:text-[#D80408] transition" />
+              <Icons.Search size={14} className="text-[#64748B] group-hover:text-[#0891B2] transition" />
               <span className="text-[#475569] dark:text-slate-300 font-medium">Quick search...</span>
               <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[9px] font-mono font-bold bg-white dark:bg-slate-900 text-[#64748B] border border-[#E2E8F0] dark:border-slate-700 rounded-md shadow-2xs">
                 Ctrl K
@@ -77,7 +77,7 @@ export const TopNav: React.FC = () => {
               href="/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#D80408] bg-[#ECFEFF] dark:bg-cyan-950/40 border border-[#CFFAFE] dark:border-cyan-800/50 rounded-xl hover:bg-[#CFFAFE] transition shadow-2xs"
+              className="hidden sm:flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-[#0891B2] bg-[#ECFEFF] dark:bg-cyan-950/40 border border-[#CFFAFE] dark:border-cyan-800/50 rounded-xl hover:bg-[#CFFAFE] transition shadow-2xs"
               title="View Live Blog Site"
             >
               <Icons.ExternalLink size={13} /> View Live Site
@@ -89,7 +89,7 @@ export const TopNav: React.FC = () => {
               className="w-9 h-9 flex items-center justify-center rounded-xl text-[#64748B] hover:text-[#0F172A] dark:hover:text-white hover:bg-[#F8FAFC] dark:hover:bg-slate-800 transition cursor-pointer border border-[#E2E8F0] dark:border-slate-800"
               title="Toggle theme mode"
             >
-              {darkMode ? <Icons.Sun size={18} className="text-amber-400" /> : <Icons.Moon size={18} className="text-[#D80408]" />}
+              {darkMode ? <Icons.Sun size={18} className="text-amber-400" /> : <Icons.Moon size={18} className="text-[#0891B2]" />}
             </button>
 
             {/* User profile dropdown */}
@@ -98,7 +98,7 @@ export const TopNav: React.FC = () => {
                 <img
                   src={profile?.avatar || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150'}
                   alt={profile?.full_name || 'Admin'}
-                  className="w-8 h-8 rounded-xl object-cover ring-2 ring-[#D80408]/20"
+                  className="w-8 h-8 rounded-xl object-cover ring-2 ring-[#0891B2]/20"
                 />
                 <span className="hidden md:block text-xs font-bold text-[#0F172A] dark:text-white pr-1">
                   {profile?.full_name?.split(' ')[0] || 'Admin'}
@@ -114,13 +114,13 @@ export const TopNav: React.FC = () => {
 
                 <Link
                   to="/admin/profile"
-                  className="flex items-center gap-2 px-4 py-2.5 text-xs font-medium text-[#475569] dark:text-slate-300 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#D80408] transition"
+                  className="flex items-center gap-2 px-4 py-2.5 text-xs font-medium text-[#475569] dark:text-slate-300 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#0891B2] transition"
                 >
                   <Icons.User size={14} /> My Profile
                 </Link>
                 <Link
                   to="/admin/settings"
-                  className="flex items-center gap-2 px-4 py-2.5 text-xs font-medium text-[#475569] dark:text-slate-300 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#D80408] transition"
+                  className="flex items-center gap-2 px-4 py-2.5 text-xs font-medium text-[#475569] dark:text-slate-300 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 hover:text-[#0891B2] transition"
                 >
                   <Icons.Settings size={14} /> System Settings
                 </Link>

@@ -180,7 +180,7 @@ export const BlogEditorPage: React.FC = () => {
   if (isEditMode && blogLoading) {
     return (
       <div className="flex items-center justify-center py-32">
-        <Loader2 className="animate-spin text-[#D80408]" size={32} />
+        <Loader2 className="animate-spin text-[#0891B2]" size={32} />
       </div>
     );
   }
@@ -199,7 +199,7 @@ export const BlogEditorPage: React.FC = () => {
           <button
             type="button"
             onClick={() => navigate('/admin/blogs')}
-            className="w-10 h-10 border border-[#E2E8F0] dark:border-slate-800 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 rounded-2xl flex items-center justify-center text-[#64748B] hover:text-[#D80408] transition cursor-pointer shrink-0 shadow-2xs"
+            className="w-10 h-10 border border-[#E2E8F0] dark:border-slate-800 hover:bg-[#ECFEFF] dark:hover:bg-slate-800 rounded-2xl flex items-center justify-center text-[#64748B] hover:text-[#0891B2] transition cursor-pointer shrink-0 shadow-2xs"
             title="Back to articles list"
           >
             <ArrowLeft size={18} />
@@ -209,8 +209,8 @@ export const BlogEditorPage: React.FC = () => {
               <h1 className="font-serif text-2xl md:text-3xl font-bold text-[#0F172A] dark:text-white leading-tight">
                 {isEditMode ? 'Edit Article' : 'Write New Article'}
               </h1>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] uppercase font-bold tracking-wider bg-[#ECFEFF] text-[#D80408] border border-[#CFFAFE]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D80408] animate-ping" />
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] uppercase font-bold tracking-wider bg-[#ECFEFF] text-[#0891B2] border border-[#CFFAFE]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0891B2] animate-ping" />
                 {status}
               </span>
             </div>
@@ -229,7 +229,7 @@ export const BlogEditorPage: React.FC = () => {
               href={`/blog/${slug}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 text-xs font-semibold text-[#64748B] hover:text-[#D80408] bg-[#F8FAFC] dark:bg-slate-800 border border-[#E2E8F0] dark:border-slate-700 rounded-xl flex items-center gap-1.5 transition shadow-2xs"
+              className="px-3.5 py-2 text-xs font-semibold text-[#64748B] hover:text-[#0891B2] bg-[#F8FAFC] dark:bg-slate-800 border border-[#E2E8F0] dark:border-slate-700 rounded-xl flex items-center gap-1.5 transition shadow-2xs"
             >
               <Eye size={14} /> Preview
             </a>
@@ -247,7 +247,7 @@ export const BlogEditorPage: React.FC = () => {
             type="submit"
             disabled={isSaving}
             onClick={() => { if (status !== 'scheduled') setStatus('published'); }}
-            className="bg-gradient-to-r from-[#D80408] to-[#0EA5E9] hover:opacity-95 disabled:opacity-60 text-white text-xs font-bold px-6 py-2.5 rounded-xl flex items-center gap-2 shadow-md shadow-[#D80408]/20 cursor-pointer transition"
+            className="bg-gradient-to-r from-[#0891B2] to-[#0EA5E9] hover:opacity-95 disabled:opacity-60 text-white text-xs font-bold px-6 py-2.5 rounded-xl flex items-center gap-2 shadow-md shadow-[#0891B2]/20 cursor-pointer transition"
           >
             {isSaving ? <Loader2 size={16} className="animate-spin" /> : <Save size={16} />}
             {isSaving ? 'Saving...' : isEditMode ? 'Update Article' : 'Publish Now'}
@@ -279,7 +279,7 @@ export const BlogEditorPage: React.FC = () => {
             {/* Permanent URL Slug Bar */}
             <div className="flex flex-wrap items-center justify-between gap-3 p-3 bg-[#F8FAFC] dark:bg-slate-900/60 rounded-xl border border-[#E2E8F0] dark:border-slate-800 text-xs">
               <div className="flex items-center gap-2 font-mono text-[#64748B] overflow-hidden min-w-0">
-                <Globe size={14} className="text-[#D80408] shrink-0" />
+                <Globe size={14} className="text-[#0891B2] shrink-0" />
                 <span className="truncate">https://example.com/blog/<strong>{slug || 'url-slug'}</strong></span>
                 {slug && <Check size={14} className="text-emerald-500 shrink-0" />}
               </div>
@@ -288,7 +288,7 @@ export const BlogEditorPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={copyFullUrl}
-                  className="px-2.5 py-1 text-[11px] font-semibold text-[#D80408] hover:bg-[#ECFEFF] rounded-lg transition border border-[#CFFAFE] flex items-center gap-1 cursor-pointer"
+                  className="px-2.5 py-1 text-[11px] font-semibold text-[#0891B2] hover:bg-[#ECFEFF] rounded-lg transition border border-[#CFFAFE] flex items-center gap-1 cursor-pointer"
                 >
                   {copiedSlug ? <Check size={12} /> : <Copy size={12} />}
                   {copiedSlug ? 'Copied' : 'Copy URL'}
@@ -300,7 +300,7 @@ export const BlogEditorPage: React.FC = () => {
             <div>
               <div className="flex justify-between items-center mb-2">
                 <label className="text-xs font-bold text-[#0F172A] dark:text-slate-200 uppercase tracking-wider flex items-center gap-1.5">
-                  <FileText size={14} className="text-[#D80408]" /> Summary Excerpt
+                  <FileText size={14} className="text-[#0891B2]" /> Summary Excerpt
                 </label>
                 <span className="text-[11px] text-[#64748B] font-mono">{excerpt.length} / 200 chars</span>
               </div>
@@ -310,7 +310,7 @@ export const BlogEditorPage: React.FC = () => {
                 onChange={(e) => setExcerpt(e.target.value)}
                 placeholder="Write a compelling summary that encourages readers to continue reading..."
                 rows={3}
-                className="w-full px-4 py-3 bg-[#F8FAFC] dark:bg-slate-800/60 text-sm text-[#0F172A] dark:text-slate-200 border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#D80408] focus:ring-2 focus:ring-[#D80408]/10 transition resize-none leading-relaxed placeholder-[#94A3B8]"
+                className="w-full px-4 py-3 bg-[#F8FAFC] dark:bg-slate-800/60 text-sm text-[#0F172A] dark:text-slate-200 border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#0891B2] focus:ring-2 focus:ring-[#0891B2]/10 transition resize-none leading-relaxed placeholder-[#94A3B8]"
               />
             </div>
           </div>
@@ -319,7 +319,7 @@ export const BlogEditorPage: React.FC = () => {
           <div className="space-y-2">
             <div className="flex justify-between items-center px-1">
               <label className="text-xs font-bold text-[#0F172A] dark:text-slate-200 uppercase tracking-wider">Story Body Content *</label>
-              <span className="text-xs text-[#D80408] font-mono bg-[#ECFEFF] dark:bg-cyan-950/40 px-3 py-1 rounded-full font-bold border border-[#CFFAFE]">
+              <span className="text-xs text-[#0891B2] font-mono bg-[#ECFEFF] dark:bg-cyan-950/40 px-3 py-1 rounded-full font-bold border border-[#CFFAFE]">
                 {wordCount} words · {readingTime}
               </span>
             </div>
@@ -339,15 +339,15 @@ export const BlogEditorPage: React.FC = () => {
           <div className="bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
             <div className="flex justify-between items-center">
               <h3 className="text-xs font-bold text-[#0F172A] dark:text-white uppercase tracking-wider flex items-center gap-1.5">
-                <CheckCircle2 size={15} className="text-[#D80408]" /> Publishing Readiness
+                <CheckCircle2 size={15} className="text-[#0891B2]" /> Publishing Readiness
               </h3>
-              <span className="text-xs font-bold text-[#D80408] font-mono">{progressPercent}%</span>
+              <span className="text-xs font-bold text-[#0891B2] font-mono">{progressPercent}%</span>
             </div>
 
             {/* Progress bar */}
             <div className="w-full h-2 bg-[#F8FAFC] dark:bg-slate-800 rounded-full overflow-hidden border border-[#E2E8F0] dark:border-slate-700">
               <div
-                className="h-full bg-gradient-to-r from-[#D80408] to-[#0EA5E9] transition-all duration-300 rounded-full"
+                className="h-full bg-gradient-to-r from-[#0891B2] to-[#0EA5E9] transition-all duration-300 rounded-full"
                 style={{ width: `${progressPercent}%` }}
               />
             </div>
@@ -370,7 +370,7 @@ export const BlogEditorPage: React.FC = () => {
           {/* Cover Image Upload Card */}
           <div className="bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
             <h3 className="text-xs font-bold text-[#0F172A] dark:text-white uppercase tracking-wider flex items-center gap-1.5">
-              <ImagePlus size={15} className="text-[#D80408]" /> Cover Image
+              <ImagePlus size={15} className="text-[#0891B2]" /> Cover Image
             </h3>
 
             <div className="space-y-3">
@@ -381,7 +381,7 @@ export const BlogEditorPage: React.FC = () => {
                   value={featuredImage}
                   onChange={(e) => setFeaturedImage(e.target.value)}
                   placeholder="Paste cover image URL..."
-                  className="w-full pl-3 pr-8 py-2 bg-[#F8FAFC] dark:bg-slate-800/60 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#D80408] transition truncate text-[#0F172A] dark:text-white"
+                  className="w-full pl-3 pr-8 py-2 bg-[#F8FAFC] dark:bg-slate-800/60 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#0891B2] transition truncate text-[#0F172A] dark:text-white"
                 />
                 {featuredImage && (
                   <button
@@ -408,16 +408,16 @@ export const BlogEditorPage: React.FC = () => {
                   type="button"
                   onClick={() => imageInputRef.current?.click()}
                   disabled={uploadingImage}
-                  className="w-full py-4 border-2 border-dashed border-[#E2E8F0] dark:border-slate-700 hover:border-[#D80408] rounded-xl text-xs font-semibold text-[#64748B] hover:text-[#D80408] flex flex-col items-center justify-center gap-1.5 transition cursor-pointer disabled:opacity-60 bg-[#F8FAFC] dark:bg-slate-800/40"
+                  className="w-full py-4 border-2 border-dashed border-[#E2E8F0] dark:border-slate-700 hover:border-[#0891B2] rounded-xl text-xs font-semibold text-[#64748B] hover:text-[#0891B2] flex flex-col items-center justify-center gap-1.5 transition cursor-pointer disabled:opacity-60 bg-[#F8FAFC] dark:bg-slate-800/40"
                 >
                   {uploadingImage ? (
                     <>
-                      <Loader2 size={18} className="animate-spin text-[#D80408]" />
+                      <Loader2 size={18} className="animate-spin text-[#0891B2]" />
                       <span>Uploading {uploadProgress}%...</span>
                     </>
                   ) : (
                     <>
-                      <Upload size={18} className="text-[#D80408]" />
+                      <Upload size={18} className="text-[#0891B2]" />
                       <span className="font-bold text-[#0F172A] dark:text-white">Click or Drag & Drop Image</span>
                       <span className="text-[10px] text-[#94A3B8]">JPG, PNG, WebP supported</span>
                     </>
@@ -458,7 +458,7 @@ export const BlogEditorPage: React.FC = () => {
           {/* Classification & Category Selector Card */}
           <div className="bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-2xs">
             <h3 className="text-xs font-bold text-[#0F172A] dark:text-white uppercase tracking-wider flex items-center gap-1.5">
-              <FolderTree size={15} className="text-[#D80408]" /> Category & Tags
+              <FolderTree size={15} className="text-[#0891B2]" /> Category & Tags
             </h3>
 
             {/* Category Select */}
@@ -467,7 +467,7 @@ export const BlogEditorPage: React.FC = () => {
               <select
                 value={categoryId}
                 onChange={(e) => setCategoryId(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-[#F8FAFC] dark:bg-slate-800 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#D80408] cursor-pointer text-[#0F172A] dark:text-white font-medium"
+                className="w-full px-3.5 py-2.5 bg-[#F8FAFC] dark:bg-slate-800 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#0891B2] cursor-pointer text-[#0F172A] dark:text-white font-medium"
               >
                 <option value="">Select Category</option>
                 {categories.map((c) => (
@@ -492,13 +492,13 @@ export const BlogEditorPage: React.FC = () => {
                       onClick={() => handleTagToggle(tag.id)}
                       className={`px-2.5 py-1 rounded-lg text-[10px] font-semibold flex items-center gap-1 border transition cursor-pointer ${
                         isSelected
-                          ? 'bg-[#ECFEFF] text-[#D80408] border-[#CFFAFE] font-bold'
-                          : 'bg-white dark:bg-slate-900 border-[#E2E8F0] dark:border-slate-700 text-[#475569] hover:border-[#D80408]/50'
+                          ? 'bg-[#ECFEFF] text-[#0891B2] border-[#CFFAFE] font-bold'
+                          : 'bg-white dark:bg-slate-900 border-[#E2E8F0] dark:border-slate-700 text-[#475569] hover:border-[#0891B2]/50'
                       }`}
                     >
                       <Hash size={10} />
                       {tag.name}
-                      {isSelected && <X size={10} className="ml-0.5 text-[#D80408]" />}
+                      {isSelected && <X size={10} className="ml-0.5 text-[#0891B2]" />}
                     </button>
                   );
                 })}
@@ -512,7 +512,7 @@ export const BlogEditorPage: React.FC = () => {
                   type="checkbox"
                   checked={featured}
                   onChange={(e) => setFeatured(e.target.checked)}
-                  className="rounded border-[#E2E8F0] text-[#D80408] focus:ring-[#D80408]/20 w-4 h-4"
+                  className="rounded border-[#E2E8F0] text-[#0891B2] focus:ring-[#0891B2]/20 w-4 h-4"
                 />
                 Mark as Featured Article
               </label>
@@ -523,13 +523,13 @@ export const BlogEditorPage: React.FC = () => {
           {status === 'scheduled' && (
             <div className="bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-slate-800 rounded-2xl p-6 space-y-3 shadow-2xs">
               <h3 className="text-xs font-bold text-[#0F172A] dark:text-white uppercase tracking-wider flex items-center gap-1.5">
-                <Calendar size={15} className="text-[#D80408]" /> Publishing Schedule
+                <Calendar size={15} className="text-[#0891B2]" /> Publishing Schedule
               </h3>
               <input
                 type="datetime-local"
                 value={scheduledAt}
                 onChange={(e) => setScheduledAt(e.target.value)}
-                className="w-full px-3.5 py-2.5 bg-[#F8FAFC] dark:bg-slate-800 border border-[#E2E8F0] dark:border-slate-700 rounded-xl text-xs text-[#0F172A] dark:text-white focus:outline-none focus:border-[#D80408]"
+                className="w-full px-3.5 py-2.5 bg-[#F8FAFC] dark:bg-slate-800 border border-[#E2E8F0] dark:border-slate-700 rounded-xl text-xs text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0891B2]"
               />
             </div>
           )}
@@ -541,7 +541,7 @@ export const BlogEditorPage: React.FC = () => {
               <button
                 type="button"
                 onClick={handleAiDescription}
-                className="px-2.5 py-1 bg-[#ECFEFF] hover:bg-[#CFFAFE] text-[#D80408] text-[10px] font-bold rounded-lg flex items-center gap-1 transition cursor-pointer border border-[#CFFAFE]"
+                className="px-2.5 py-1 bg-[#ECFEFF] hover:bg-[#CFFAFE] text-[#0891B2] text-[10px] font-bold rounded-lg flex items-center gap-1 transition cursor-pointer border border-[#CFFAFE]"
               >
                 <Sparkles size={11} /> AI Auto-Fill
               </button>
@@ -554,7 +554,7 @@ export const BlogEditorPage: React.FC = () => {
                 value={seoTitle}
                 onChange={(e) => setSeoTitle(e.target.value)}
                 placeholder="SEO page title..."
-                className="w-full px-3.5 py-2 bg-[#F8FAFC] dark:bg-slate-800/60 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#D80408] transition text-[#0F172A] dark:text-white"
+                className="w-full px-3.5 py-2 bg-[#F8FAFC] dark:bg-slate-800/60 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#0891B2] transition text-[#0F172A] dark:text-white"
               />
             </div>
 
@@ -565,7 +565,7 @@ export const BlogEditorPage: React.FC = () => {
                 onChange={(e) => setSeoDescription(e.target.value)}
                 placeholder="SEO search engine summary description..."
                 rows={3}
-                className="w-full px-3.5 py-2 bg-[#F8FAFC] dark:bg-slate-800/60 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#D80408] transition resize-none text-[#0F172A] dark:text-white"
+                className="w-full px-3.5 py-2 bg-[#F8FAFC] dark:bg-slate-800/60 text-xs border border-[#E2E8F0] dark:border-slate-700 rounded-xl focus:outline-none focus:border-[#0891B2] transition resize-none text-[#0F172A] dark:text-white"
               />
             </div>
           </div>
