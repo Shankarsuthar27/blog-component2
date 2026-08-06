@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { supabase } from '../lib/supabase/client';
-import { FolderTree, Tag, ArrowRight, Loader2, BookOpen } from 'lucide-react';
+import { FolderTree, Tag, ArrowRight, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface CategoryItem {

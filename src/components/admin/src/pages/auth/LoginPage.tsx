@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/authStore';
 import { supabase, isSupabaseConfigured } from '../../lib/supabase/client';
-import { BookOpen, Lock, Mail, Eye, EyeOff } from 'lucide-react';
+import { Lock, Mail, Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export const LoginPage: React.FC = () => {
@@ -90,12 +90,6 @@ export const LoginPage: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const fillDemoCredentials = () => {
-    setEmail('admin2233@insightjournal.com');
-    setPassword('admin@2233');
-    toast.success('Admin credentials loaded (admin2233 / admin@2233)');
   };
 
   return (

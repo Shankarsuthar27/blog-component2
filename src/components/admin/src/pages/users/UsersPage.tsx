@@ -4,7 +4,6 @@ import type { Column } from '../../components/tables/DataTable';
 import { Mail, Loader2 } from 'lucide-react';
 import { useProfiles, useUpdateUserRole } from '../../hooks/useProfiles';
 import toast from 'react-hot-toast';
-import { supabase } from '../../lib/supabase/client';
 import type { Profile } from '../../types/admin';
 
 export const UsersPage: React.FC = () => {

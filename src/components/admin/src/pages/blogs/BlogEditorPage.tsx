@@ -8,7 +8,7 @@ import { slugify, calculateReadingTime } from '../../utils/helpers';
 import { TipTapEditor } from '../../components/editor/TipTapEditor';
 import { storageServices } from '../../lib/supabase/storage';
 import {
-  ArrowLeft, Save, Sparkles, AlertCircle, Hash, X, Upload, Loader2, ImagePlus, Trash2, Globe, FileText, FolderTree, Calendar, Copy, Check, Eye, ExternalLink, CheckCircle2
+  ArrowLeft, Save, Sparkles, AlertCircle, Hash, X, Upload, Loader2, ImagePlus, Trash2, Globe, FileText, FolderTree, Calendar, Copy, Check, Eye, CheckCircle2
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';

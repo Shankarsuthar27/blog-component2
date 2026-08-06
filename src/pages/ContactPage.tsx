@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { supabase } from '../lib/supabase/client';
-import { Mail, MessageSquare, Send, MapPin, Phone, CheckCircle2, Loader2, Sparkles } from 'lucide-react';
+import { Mail, Send, MapPin, Phone, CheckCircle2, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export const ContactPage: React.FC = () => {

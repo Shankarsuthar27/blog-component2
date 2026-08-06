@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Menu, X, Search, BookOpen, LayoutDashboard } from 'lucide-react';
+import { Menu, X, Search, LayoutDashboard } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
-  { label: 'Blog', to: '/blog' },
+  { label: 'Blog', to: '/' },
   { label: 'Categories', to: '/categories' },
   { label: 'Contact', to: '/contact' },
 ];
@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchValue.trim()) {
-      navigate(`/blog?search=${encodeURIComponent(searchValue.trim())}`);
+      navigate(`/?search=${encodeURIComponent(searchValue.trim())}`);
       setShowSearch(false);
       setSearchValue('');
     }
@@ -85,11 +85,10 @@ export const Header: React.FC = () => {
               <NavLink
                 key={link.label}
                 to={link.to}
-                end={link.to === '/'}
                 className={({ isActive }) =>
                   `relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ${
-                    isActive
-                      ? 'text-[#D80408] bg-red-50 font-semibold'
+                    isActive && link.to === '/'
+                      ? 'text-[#D80408] bg-cyan-50'
                       : 'text-[#64748B] hover:text-[#0F172A] hover:bg-slate-50'
                   }`
                 }

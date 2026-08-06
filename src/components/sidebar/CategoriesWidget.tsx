@@ -31,7 +31,7 @@ export const CategoriesWidget: React.FC<Props> = ({ selectedCategory, onSelect }
           return;
         }
 
-        const { data: blogs, error: blogErr } = await supabase
+        const { data: blogs } = await supabase
           .from('blogs')
           .select('category_id')
           .eq('status', 'published');

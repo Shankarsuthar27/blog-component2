@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
 import { NewsletterWidget } from '../components/sidebar/NewsletterWidget';
-import { BookOpen, Target, Users, Award, Sparkles, Heart } from 'lucide-react';
+import { Target, Award, Sparkles, Heart } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   return (

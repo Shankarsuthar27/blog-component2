@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Header } from '../components/layout/Header';
 import { Footer } from '../components/layout/Footer';
@@ -12,7 +12,6 @@ import { PopularPostsWidget } from '../components/sidebar/PopularPostsWidget';
 import { NewsletterWidget } from '../components/sidebar/NewsletterWidget';
 import { SocialWidget } from '../components/sidebar/SocialWidget';
 import { motion } from 'framer-motion';
-import { Rss } from 'lucide-react';
 import { supabase } from '../lib/supabase/client';
 import type { BlogPost } from '../types/blog';
 

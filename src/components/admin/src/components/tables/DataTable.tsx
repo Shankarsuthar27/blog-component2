@@ -134,7 +134,7 @@ export function DataTable<T>({
             {loading && (
               Array.from({ length: 5 }).map((_, i) => (
                 <tr key={i} className="animate-pulse">
-                  {columns.map((col, j) => (
+                  {columns.map((_, j) => (
                     <td key={j} className="py-4 px-6">
                       <div className="h-4 bg-slate-100 dark:bg-slate-800 rounded-md w-3/4" />
                     </td>
