@@ -35,7 +35,13 @@ export interface NewsImportLog {
   id: string;
   source_name?: string | null;
   source_url?: string | null;
-  status?: string | null;
+  status: string;
+  discovered_count?: number;
+  imported_count?: number;
+  duplicate_count?: number;
+  failed_count?: number;
+  duration_ms?: number;
+  triggered_by?: 'scheduler' | 'manual';
   error_message?: string | null;
   created_at: string;
 }
@@ -48,6 +54,18 @@ export interface NewsImportStats {
   rejected: number;
   duplicates: number;
   lastSyncTime: string | null;
+  nextSyncTime?: string | null;
+  isSyncing?: boolean;
+  intervalMinutes?: number;
+  autoPublishEnabled?: boolean;
+  lastSyncResult?: {
+    discovered: number;
+    imported: number;
+    duplicates: number;
+    failed: number;
+    message: string;
+    timestamp?: string;
+  } | null;
 }
 
 export interface NewsSyncResult {
@@ -57,5 +75,7 @@ export interface NewsSyncResult {
   duplicates: number;
   failed: number;
   message: string;
+  durationMs?: number;
+  timestamp?: string;
   logs?: NewsImportLog[];
 }

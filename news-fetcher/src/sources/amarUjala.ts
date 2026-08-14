@@ -16,7 +16,7 @@ export class AmarUjalaJaloreAdapter implements NewsSourceAdapter {
       });
       if (res.ok) {
         const html = await res.text();
-        const linkRegex = /<a[^>]+href="(\/rajasthan\/jalore\/[^\"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+        const linkRegex = /<a[^>]+href="(\/rajasthan\/jalore\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
         let match: RegExpExecArray | null;
         const seenUrls = new Set<string>();
 

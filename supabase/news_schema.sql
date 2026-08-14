@@ -1,6 +1,7 @@
 -- ==========================================
 -- AUTOMATED JALORE NEWS IMPORT SYSTEM SCHEMA
--- Idempotent (safe to re-run multiple times)
+-- Source: Dainik Bhaskar (https://www.bhaskar.com/local/rajasthan/jalore/)
+-- Idempotent (safe to run multiple times)
 -- ==========================================
 
 -- 1. News Articles Table
@@ -38,14 +39,20 @@ create table if not exists public.news_articles (
 -- 2. News Import Logs Table
 create table if not exists public.news_import_logs (
   id uuid primary key default gen_random_uuid(),
-  source_name text,
+  source_name text default 'Dainik Bhaskar',
   source_url text,
-  status text,
+  status text not null, -- 'batch_completed', 'imported', 'skipped_duplicate', 'failed'
+  discovered_count integer default 0,
+  imported_count integer default 0,
+  duplicate_count integer default 0,
+  failed_count integer default 0,
+  duration_ms integer default 0,
+  triggered_by text default 'scheduler', -- 'scheduler' or 'manual'
   error_message text,
   created_at timestamptz default now()
 );
 
--- Performance Indexes
+-- Performance Indexes & Unique Constraints
 create index if not exists idx_news_articles_source_url on public.news_articles(source_url);
 create index if not exists idx_news_articles_slug on public.news_articles(slug);
 create index if not exists idx_news_articles_status on public.news_articles(status);

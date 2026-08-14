@@ -1,3 +1,5 @@
+export type NewsStatus = 'pending' | 'approved' | 'rejected' | 'published';
+
 export interface RawDiscoveredArticle {
   title: string;
   sourceUrl: string;
@@ -41,4 +43,29 @@ export interface NewsSourceAdapter {
   baseUrl: string;
   targetUrl: string;
   fetchLatestNews(): Promise<RawDiscoveredArticle[]>;
+}
+
+export interface SyncPipelineResult {
+  discovered: number;
+  imported: number;
+  duplicates: number;
+  failed: number;
+  message: string;
+  durationMs: number;
+  timestamp: string;
+}
+
+export interface NewsImportLogEntry {
+  id?: string;
+  source_name?: string | null;
+  source_url?: string | null;
+  status: string;
+  discovered_count?: number;
+  imported_count?: number;
+  duplicate_count?: number;
+  failed_count?: number;
+  duration_ms?: number;
+  triggered_by?: 'scheduler' | 'manual';
+  error_message?: string | null;
+  created_at?: string;
 }

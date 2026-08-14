@@ -7,7 +7,36 @@ interface NewsCardProps {
   article: NewsArticle;
 }
 
+/**
+ * Strip HTML tags, JS noise, and boilerplate from a card description string.
+ * Ensures no code leaks through from old dirty DB records.
+ */
+function cleanExcerpt(raw: string | undefined | null, maxLen = 130): string {
+  if (!raw) return '';
+  // Strip all HTML tags
+  let text = raw.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // Reject if it contains JS-like code
+  const hasCode =
+    /\b(?:function|var |const |let |googletag|localStorage|setTimeout|addEventListener|document\.)/.test(text) ||
+    (text.match(/[{}();=]/g) || []).length / text.length > 0.05;
+  if (hasCode) return '';
+  // Reject boilerplate noise banners
+  const noiseStarts = [
+    'AI Summary', 'मुख्य बातें', 'फ्री ई-पेपर', 'लॉयल्टी रिवॉर्ड्स',
+    'खबरें लगातार', 'रहें हर खबर', 'अपनी प्रतिक्रिया', 'Link Copied',
+    'Stickers Emojis', 'Copyright', 'DNPA', 'जालोर समाचार —',
+  ];
+  if (noiseStarts.some(n => text.startsWith(n))) return '';
+  return text.length > maxLen ? text.slice(0, maxLen) + '...' : text;
+}
+
 export const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
+  // Build the best possible clean description for the card
+  const description =
+    cleanExcerpt(article.summary) ||
+    cleanExcerpt(article.excerpt) ||
+    '';
+
   return (
     <article className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
       {/* Image & Category Tag */}
@@ -66,10 +95,12 @@ export const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
             <Link to={`/news/${article.slug}`}>{article.title}</Link>
           </h2>
 
-          {/* Excerpt / Summary */}
-          <p className="text-xs text-[#475569] leading-relaxed line-clamp-3">
-            {article.summary || article.excerpt || article.title}
-          </p>
+          {/* Clean Excerpt / Description */}
+          {description && (
+            <p className="text-xs text-[#475569] leading-relaxed line-clamp-3">
+              {description}
+            </p>
+          )}
         </div>
 
         {/* Source Attribution & Read More Footer */}
