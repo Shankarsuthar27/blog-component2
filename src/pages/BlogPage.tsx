@@ -206,8 +206,8 @@ export const BlogPage: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Featured Post */}
-        {featuredPost && (
+        {/* Featured Post — shown only on Page 1 when no active search/category filter */}
+        {featuredPost && currentPage === 1 && !searchTerm && !selectedCategory && (
           <section aria-label="Featured post" className="mb-14">
             <FeaturedPost post={featuredPost} />
           </section>
