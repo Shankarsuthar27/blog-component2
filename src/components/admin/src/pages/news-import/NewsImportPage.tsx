@@ -45,11 +45,26 @@ export const NewsImportPage: React.FC = () => {
   const [tableMissing, setTableMissing] = useState(false);
   const [serverOffline, setServerOffline] = useState(false);
 
-  // Fetch articles from Supabase
+  // Fetch articles from Supabase & Purge bad sources / script noise
   const fetchArticles = useCallback(async () => {
     setIsLoading(true);
     setTableMissing(false);
     try {
+      // 1. Purge Amar Ujala & script-polluted articles automatically
+      try {
+        await supabase
+          .from('news_articles')
+          .delete()
+          .ilike('source_name', '%Amar Ujala%');
+
+        await supabase
+          .from('news_articles')
+          .delete()
+          .or('excerpt.ilike.%document.addEventListener%,excerpt.ilike.%header{border-bottom%,content.ilike.%document.addEventListener%');
+      } catch (cleanErr) {
+        console.warn('Auto-cleanup notice:', cleanErr);
+      }
+
       const { data, error } = await supabase
         .from('news_articles')
         .select('*')
@@ -61,7 +76,18 @@ export const NewsImportPage: React.FC = () => {
         }
         throw error;
       }
-      setArticles((data as NewsArticle[]) || []);
+
+      const cleanItems = ((data as NewsArticle[]) || []).filter((item) => {
+        const src = (item.source_name || '').toLowerCase();
+        const exc = item.excerpt || '';
+        const cnt = item.content || '';
+        if (src.includes('amar ujala') || src.includes('amarujala')) return false;
+        if (exc.includes('document.addEventListener') || exc.includes('header{border-bottom') || exc.includes('googletag')) return false;
+        if (cnt.includes('document.addEventListener') || cnt.includes('@media only screen')) return false;
+        return true;
+      });
+
+      setArticles(cleanItems);
 
       const { data: logsData } = await supabase
         .from('news_import_logs')
@@ -134,7 +160,7 @@ export const NewsImportPage: React.FC = () => {
   const handleManualSync = async () => {
     setIsSyncing(true);
     setServerOffline(false);
-    const toastId = toast.loading('Syncing latest Jalore news from Dainik Bhaskar…');
+    const toastId = toast.loading('Fetching latest news from Dainik Bhaskar, Patrika & Google News…');
     try {
       let response = await fetch('/api/news/sync', {
         method: 'POST',
@@ -152,18 +178,19 @@ export const NewsImportPage: React.FC = () => {
       if (response.ok) {
         const result = await response.json();
         if (result.imported > 0) {
-          toast.success(`✅ ${result.imported} new article${result.imported > 1 ? 's' : ''} imported!`, { id: toastId, duration: 5000 });
-        } else if (result.duplicates > 0 && result.imported === 0) {
+          toast.success(`🎉 ${result.imported} new article${result.imported > 1 ? 's' : ''} imported from live sources!`, { id: toastId, duration: 6000 });
+          setActiveTab('pending');
+        } else if (result.duplicates > 0 || result.discovered > 0) {
           toast.success(
-            `All ${result.duplicates} articles already exist. If data is wrong, use "Clear Pending & Re-sync".`,
-            { id: toastId, duration: 7000 }
+            `Checked live sources: ${result.discovered || result.duplicates} stories evaluated. All latest news is up-to-date!`,
+            { id: toastId, duration: 6000 }
           );
         } else {
-          toast.success(result.message || 'Sync completed.', { id: toastId, duration: 5000 });
+          toast.success(result.message || 'Sync completed. Latest news evaluated.', { id: toastId, duration: 5000 });
         }
       } else {
         setServerOffline(true);
-        toast.error('News-fetcher server offline. Run "npm run dev" in your terminal.', { id: toastId, duration: 7000 });
+        toast.error('News-fetcher server offline. Please start backend on port 3001.', { id: toastId, duration: 7000 });
       }
       await Promise.all([fetchArticles(), fetchServerStatus()]);
     } catch {
@@ -175,7 +202,12 @@ export const NewsImportPage: React.FC = () => {
         });
         if (directRes.ok) {
           const result = await directRes.json();
-          toast.success(`Sync completed (${result.imported || 0} imported).`, { id: toastId });
+          if (result.imported > 0) {
+            toast.success(`🎉 ${result.imported} new article${result.imported > 1 ? 's' : ''} imported!`, { id: toastId });
+            setActiveTab('pending');
+          } else {
+            toast.success(`Checked live sources. Latest news is up-to-date.`, { id: toastId });
+          }
           await Promise.all([fetchArticles(), fetchServerStatus()]);
           return;
         }
@@ -183,7 +215,7 @@ export const NewsImportPage: React.FC = () => {
         // Ignored
       }
       setServerOffline(true);
-      toast.error('Cannot connect to news-fetcher server. Run "npm run dev" in terminal.', { id: toastId, duration: 7000 });
+      toast.error('Cannot connect to news-fetcher server. Ensure backend is running.', { id: toastId, duration: 7000 });
     } finally {
       setIsSyncing(false);
     }

@@ -1,12 +1,14 @@
 import { NewsSourceAdapter } from '../types/news';
 import { BhaskarJaloreAdapter } from './bhaskar';
 import { PatrikaJaloreAdapter } from './patrika';
-import { AmarUjalaJaloreAdapter } from './amarUjala';
+import { GoogleNewsJaloreAdapter } from './googleNews';
 
 export const REGISTERED_SOURCES: NewsSourceAdapter[] = [
   new BhaskarJaloreAdapter(),
   new PatrikaJaloreAdapter(),
-  new AmarUjalaJaloreAdapter(),
+  new GoogleNewsJaloreAdapter(),
 ];
 
-export { BhaskarJaloreAdapter, PatrikaJaloreAdapter, AmarUjalaJaloreAdapter };
+export { BhaskarJaloreAdapter, PatrikaJaloreAdapter, GoogleNewsJaloreAdapter };
+
+

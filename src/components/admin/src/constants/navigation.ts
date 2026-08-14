@@ -14,6 +14,7 @@ export const NAVIGATION_ITEMS: NavItem[] = [
   { label: 'Media Library', path: '/admin/media', icon: 'Image', group: 'content' },
   
   { label: 'Comments', path: '/admin/comments', icon: 'MessageSquare', group: 'audience' },
+  { label: 'Agent Management', path: '/admin/agents', icon: 'UserCheck', group: 'audience' },
   { label: 'Newsletter', path: '/admin/newsletter', icon: 'Mail', group: 'audience' },
   
   { label: 'Analytics', path: '/admin/analytics', icon: 'BarChart3', group: 'analytics' },

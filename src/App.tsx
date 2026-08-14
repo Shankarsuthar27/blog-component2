@@ -29,6 +29,18 @@ import { SettingsPage } from './components/admin/src/pages/settings/SettingsPage
 import { ActivityLogsPage } from './components/admin/src/pages/activity/ActivityLogsPage';
 import { UsersPage } from './components/admin/src/pages/users/UsersPage';
 
+import { BecomeAgentPage } from './pages/BecomeAgentPage';
+import { AgentLoginPage } from './pages/agent/AgentLoginPage';
+import { AgentLayout } from './components/agent/AgentLayout';
+import { AgentDashboardPage } from './components/agent/pages/AgentDashboardPage';
+import { AgentCreateNewsPage } from './components/agent/pages/AgentCreateNewsPage';
+import { AgentMyNewsPage } from './components/agent/pages/AgentMyNewsPage';
+import { AgentProfilePage } from './components/agent/pages/AgentProfilePage';
+import { AgentReferralsPage } from './components/agent/pages/AgentReferralsPage';
+import { AgentAnalyticsPage } from './components/agent/pages/AgentAnalyticsPage';
+import { AgentNotificationsPage } from './components/agent/pages/AgentNotificationsPage';
+import { AgentManagementPage } from './components/admin/src/pages/agents/AgentManagementPage';
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -50,6 +62,21 @@ function App() {
         <Route path="/categories" element={<PublicCategoriesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/blog/:slug" element={<BlogDetailsPage />} />
+        <Route path="/become-agent" element={<BecomeAgentPage />} />
+        <Route path="/become-an-agent" element={<BecomeAgentPage />} />
+
+        {/* Dedicated Agent Portal Scope */}
+        <Route path="/agent/login" element={<AgentLoginPage />} />
+        <Route path="/agent" element={<AgentLayout />}>
+          <Route index element={<AgentDashboardPage />} />
+          <Route path="dashboard" element={<AgentDashboardPage />} />
+          <Route path="profile" element={<AgentProfilePage />} />
+          <Route path="news/create" element={<AgentCreateNewsPage />} />
+          <Route path="news" element={<AgentMyNewsPage />} />
+          <Route path="referrals" element={<AgentReferralsPage />} />
+          <Route path="analytics" element={<AgentAnalyticsPage />} />
+          <Route path="notifications" element={<AgentNotificationsPage />} />
+        </Route>
         
         {/* Admin Router Scope */}
         <Route
@@ -73,6 +100,7 @@ function App() {
                   <Route path="tags" element={<TagsPage />} />
                   <Route path="media" element={<MediaLibraryPage />} />
                   <Route path="comments" element={<CommentsPage />} />
+                  <Route path="agents" element={<AgentManagementPage />} />
                   <Route path="newsletter" element={<NewsletterPage />} />
                   <Route path="analytics" element={<AnalyticsPage />} />
                   <Route path="activity-logs" element={<ActivityLogsPage />} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { supabase } from '../../../../../lib/supabase/client';
 import { StatCard } from '../../components/cards/StatCard';
 import { useDashboardStats, useDashboardViewTrend } from '../../hooks/useDashboard';
 import { useBlogs } from '../../hooks/useBlogs';
@@ -14,6 +15,29 @@ export const DashboardPage: React.FC = () => {
   const { data: viewTrend } = useDashboardViewTrend();
   const { data: blogs } = useBlogs();
   const { data: activityLogs } = useActivityLogs();
+
+  const [agentCounts, setAgentCounts] = React.useState({ total: 0, active: 0, pending: 0, suspended: 0 });
+
+  React.useEffect(() => {
+    const fetchAgentStats = async () => {
+      try {
+        const { data: agts } = await supabase.from('agents').select('status');
+        const { data: reqs } = await supabase.from('agent_requests').select('status').eq('status', 'pending');
+        
+        const active = (agts || []).filter((a) => a.status === 'active').length;
+        const suspended = (agts || []).filter((a) => a.status === 'suspended').length;
+        setAgentCounts({
+          total: (agts || []).length,
+          active,
+          suspended,
+          pending: (reqs || []).length,
+        });
+      } catch {
+        // Fallback
+      }
+    };
+    fetchAgentStats();
+  }, []);
 
   const recentPosts = (blogs || []).slice(0, 4);
 
@@ -78,6 +102,52 @@ export const DashboardPage: React.FC = () => {
           icon="Mail"
           trend={{ value: 'newsletter', isPositive: true }}
         />
+      </div>
+
+      {/* Agent Network Overview Card */}
+      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-[#0F172A] text-white p-6 rounded-3xl shadow-xl border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-2xl bg-[#0891B2]/20 border border-[#0891B2]/40 text-[#0891B2] flex items-center justify-center shrink-0">
+            <Icons.UserCheck size={26} />
+          </div>
+          <div>
+            <h3 className="font-serif text-lg font-bold text-white flex items-center gap-2">
+              Agent Network Overview
+              {agentCounts.pending > 0 && (
+                <span className="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">
+                  {agentCounts.pending} Pending Review
+                </span>
+              )}
+            </h3>
+            <p className="text-xs text-slate-400 mt-1">
+              Active News Agents reporting authentic local stories across Jalore & Rajasthan.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-6 text-xs">
+          <div className="text-center">
+            <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Total Agents</span>
+            <span className="text-xl font-bold text-white">{agentCounts.total}</span>
+          </div>
+          <div className="h-8 w-px bg-slate-700 hidden sm:block" />
+          <div className="text-center">
+            <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Active</span>
+            <span className="text-xl font-bold text-emerald-400">{agentCounts.active}</span>
+          </div>
+          <div className="h-8 w-px bg-slate-700 hidden sm:block" />
+          <div className="text-center">
+            <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Pending</span>
+            <span className="text-xl font-bold text-amber-400">{agentCounts.pending}</span>
+          </div>
+          <div className="h-8 w-px bg-slate-700 hidden sm:block" />
+          <button
+            onClick={() => navigate('/admin/agents')}
+            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#0891B2] to-[#0EA5E9] text-white font-bold text-xs shadow-md hover:opacity-95 transition cursor-pointer"
+          >
+            Review Agent Requests →
+          </button>
+        </div>
       </div>
 
       {/* Charts Grid */}
