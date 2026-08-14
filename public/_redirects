@@ -1,0 +1,3 @@
+# Netlify & Cloudflare Pages SPA Routing Rules
+# Redirect all requests to index.html with HTTP 200 status code
+/*    /index.html   200

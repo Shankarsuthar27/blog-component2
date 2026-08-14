@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daily Bharat — Redirecting...</title>
+    <script>
+      // Save original requested path to sessionStorage and redirect to root index.html
+      sessionStorage.setItem('redirect', location.href);
+      window.location.replace('/');
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to application...</p>
+  </body>
+</html>

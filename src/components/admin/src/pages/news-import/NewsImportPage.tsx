@@ -279,7 +279,7 @@ export const NewsImportPage: React.FC = () => {
   const isBusy = isSyncing || isClearing || (serverStats.isSyncing ?? false);
 
   return (
-    <div className="p-6 md:p-8 space-y-6 animate-fade-in max-w-7xl mx-auto">
+    <div className="p-3 sm:p-6 md:p-8 space-y-6 animate-fade-in max-w-7xl mx-auto w-full overflow-x-hidden">
 
       {/* ── Header ─────────────────────────────────────────────────────────────── */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -460,7 +460,7 @@ export const NewsImportPage: React.FC = () => {
       )}
 
       {/* ── Metric Cards ─────────────────────────────────────────────────────────── */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
         <div className="bg-white dark:bg-[#1E293B] border border-slate-200 dark:border-slate-800 p-4 rounded-2xl shadow-xs">
           <div className="flex items-center justify-between text-slate-500 mb-2">
             <span className="text-xs font-semibold">Total Ingested</span>

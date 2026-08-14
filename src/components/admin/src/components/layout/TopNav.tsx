@@ -63,10 +63,11 @@ export const TopNav: React.FC = () => {
             {/* Command Palette Trigger Search */}
             <button
               onClick={() => setCommandPaletteOpen(true)}
-              className="hidden md:flex items-center gap-2 px-3.5 py-2 bg-[#F8FAFC] dark:bg-slate-800/80 border border-[#E2E8F0] dark:border-slate-700 text-[#64748B] rounded-xl hover:border-[#0891B2]/50 hover:bg-white dark:hover:bg-slate-800 transition text-xs cursor-pointer group shadow-xs"
+              className="flex items-center gap-2 p-2 sm:px-3.5 sm:py-2 bg-[#F8FAFC] dark:bg-slate-800/80 border border-[#E2E8F0] dark:border-slate-700 text-[#64748B] rounded-xl hover:border-[#0891B2]/50 hover:bg-white dark:hover:bg-slate-800 transition text-xs cursor-pointer group shadow-2xs"
+              title="Quick Search (Ctrl+K)"
             >
-              <Icons.Search size={14} className="text-[#64748B] group-hover:text-[#0891B2] transition" />
-              <span className="text-[#475569] dark:text-slate-300 font-medium">Quick search...</span>
+              <Icons.Search size={16} className="text-[#64748B] group-hover:text-[#0891B2] transition shrink-0" />
+              <span className="hidden md:inline text-[#475569] dark:text-slate-300 font-medium">Quick search...</span>
               <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 text-[9px] font-mono font-bold bg-white dark:bg-slate-900 text-[#64748B] border border-[#E2E8F0] dark:border-slate-700 rounded-md shadow-2xs">
                 Ctrl K
               </kbd>

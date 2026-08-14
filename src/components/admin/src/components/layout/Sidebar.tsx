@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { useUIStore } from '../../store/uiStore';
 import { useAuthStore } from '../../store/authStore';
 import { NAVIGATION_ITEMS } from '../../constants/navigation';
@@ -13,9 +13,17 @@ const NavIcon: React.FC<{ name: string; className?: string }> = ({ name, classNa
 };
 
 export const Sidebar: React.FC = () => {
-  const { sidebarOpen, toggleSidebar } = useUIStore();
+  const { sidebarOpen, toggleSidebar, setSidebarOpen } = useUIStore();
   const { profile, logout } = useAuthStore();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Auto-close mobile sidebar drawer when navigating to a new route
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      setSidebarOpen(false);
+    }
+  }, [location.pathname, setSidebarOpen]);
 
   const handleLogout = async () => {
     try {
@@ -27,16 +35,22 @@ export const Sidebar: React.FC = () => {
     }
   };
 
+  const handleNavClick = () => {
+    if (window.innerWidth < 1024) {
+      setSidebarOpen(false);
+    }
+  };
+
   const contentItems = NAVIGATION_ITEMS.filter((item) => item.group === 'content');
   const audienceItems = NAVIGATION_ITEMS.filter((item) => item.group === 'audience');
   const analyticsItems = NAVIGATION_ITEMS.filter((item) => item.group === 'analytics');
   const systemItems = NAVIGATION_ITEMS.filter((item) => item.group === 'system');
 
-  const renderLink = (item: typeof NAVIGATION_ITEMS[0], isMobile = false) => (
+  const renderLink = (item: typeof NAVIGATION_ITEMS[0]) => (
     <NavLink
       key={item.path}
       to={item.path}
-      onClick={() => isMobile && sidebarOpen && toggleSidebar()}
+      onClick={handleNavClick}
       className={({ isActive }) =>
         `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all duration-200 group ${
           isActive
@@ -44,10 +58,10 @@ export const Sidebar: React.FC = () => {
             : 'text-[#475569] dark:text-slate-400 hover:bg-[#ECFEFF] dark:hover:bg-slate-800/80 hover:text-[#0891B2] dark:hover:text-cyan-400'
         }`
       }
-      title={!sidebarOpen && !isMobile ? item.label : undefined}
+      title={!sidebarOpen ? item.label : undefined}
     >
       <NavIcon name={item.icon} className="shrink-0 transition-transform group-hover:scale-110" />
-      {(sidebarOpen || isMobile) && <span className="truncate">{item.label}</span>}
+      {sidebarOpen && <span className="truncate">{item.label}</span>}
     </NavLink>
   );
 

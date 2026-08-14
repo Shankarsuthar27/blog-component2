@@ -168,7 +168,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           </div>
 
           {/* Status Action Buttons */}
-          <div className="flex items-center gap-2 pt-0.5">
+          <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
             {isPending && (
               <>
                 <button
