@@ -99,7 +99,7 @@ export const CategoriesPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: idx * 0.08 }}
                   whileHover={{ y: -6 }}
-                  className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs flex flex-col justify-between group hover:border-[#D80408]/40 transition-all duration-300"
+                  className="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between group hover:border-[#D80408]/40 transition-all duration-300"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">

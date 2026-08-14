@@ -43,7 +43,7 @@ export const FeaturedPost: React.FC<Props> = ({ post }) => {
         </div>
 
         {/* Content */}
-        <div className="lg:w-[45%] p-8 lg:p-10 xl:p-12 flex flex-col justify-center relative">
+        <div className="lg:w-[45%] p-5 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-center relative">
           {/* Category Badge */}
           <span className="inline-block bg-cyan-50 text-[#D80408] text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider border border-cyan-200 mb-5 self-start">
             {post.category}

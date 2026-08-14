@@ -255,7 +255,7 @@ export const BlogDetailsPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-white rounded-2xl shadow-xl border border-slate-200 -mt-20 md:-mt-32 relative z-10 mb-12"
           >
-            <div className="max-w-3xl mx-auto px-6 md:px-12 py-10 md:py-14">
+            <div className="max-w-3xl mx-auto px-4 sm:px-8 md:px-12 py-8 md:py-14">
               {/* Back Button */}
               <button
                 onClick={() => navigate(-1)}

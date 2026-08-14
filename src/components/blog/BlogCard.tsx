@@ -55,20 +55,20 @@ export const BlogCard: React.FC<Props> = ({ post, index = 0 }) => {
 
         {/* Footer meta */}
         <div className="flex items-center justify-between flex-wrap gap-2 pt-4 border-t border-slate-100">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-2 flex-wrap">
             <img
               src={post.author.avatar}
               alt={post.author.name}
-              className="w-7 h-7 rounded-full object-cover ring-1 ring-slate-200"
+              className="w-7 h-7 rounded-full object-cover ring-1 ring-slate-200 shrink-0"
             />
-            <div className="text-xs text-[#64748B]">
+            <div className="text-xs text-[#64748B] flex items-center gap-1.5 flex-wrap">
               <span className="font-medium text-[#111827]">{post.author.name}</span>
-              <span className="mx-1.5">·</span>
+              <span>·</span>
               <span className="inline-flex items-center gap-1">
                 <Calendar size={10} />
                 {post.publishedAt}
               </span>
-              <span className="mx-1.5">·</span>
+              <span>·</span>
               <span className="inline-flex items-center gap-1">
                 <Clock size={10} />
                 {post.readingTime}

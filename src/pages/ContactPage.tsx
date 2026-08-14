@@ -77,7 +77,7 @@ export const ContactPage: React.FC = () => {
             
             {/* Contact Info Sidebar */}
             <div className="lg:col-span-5 space-y-8">
-              <div className="bg-white rounded-2xl p-8 border border-slate-200 shadow-xs space-y-6">
+              <div className="bg-white rounded-2xl p-5 sm:p-8 border border-slate-200 shadow-xs space-y-6">
                 <h3 className="font-serif text-2xl font-bold text-[#0F172A]">Editorial Office</h3>
                 
                 <div className="space-y-4 text-xs text-[#64748B]">
@@ -118,7 +118,7 @@ export const ContactPage: React.FC = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-7">
-              <div className="bg-white rounded-2xl p-8 md:p-10 border border-slate-200 shadow-xs">
+              <div className="bg-white rounded-2xl p-5 sm:p-8 md:p-10 border border-slate-200 shadow-xs">
                 {submitted ? (
                   <div className="py-12 text-center space-y-4">
                     <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">

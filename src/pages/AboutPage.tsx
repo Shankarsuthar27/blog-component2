@@ -36,7 +36,7 @@ export const AboutPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 bg-white rounded-2xl p-8 border border-slate-200 shadow-sm text-center"
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-20 bg-white rounded-2xl p-4 sm:p-8 border border-slate-200 shadow-sm text-center"
           >
             <div>
               <p className="font-serif text-3xl md:text-4xl font-bold text-[#D80408]">150K+</p>
