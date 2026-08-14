@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { BlogPage } from './pages/BlogPage';
 import { BlogDetailsPage } from './pages/BlogDetailsPage';
+import { NewsPage } from './pages/NewsPage';
+import { NewsDetailsPage } from './pages/NewsDetailsPage';
 import { AboutPage } from './pages/AboutPage';
 import { CategoriesPage as PublicCategoriesPage } from './pages/CategoriesPage';
 import { ContactPage } from './pages/ContactPage';
@@ -15,6 +17,7 @@ import { ResetPasswordPage } from './components/admin/src/pages/auth/ResetPasswo
 import { DashboardPage } from './components/admin/src/pages/dashboard/DashboardPage';
 import { BlogListPage } from './components/admin/src/pages/blogs/BlogListPage';
 import { BlogEditorPage } from './components/admin/src/pages/blogs/BlogEditorPage';
+import { NewsImportPage } from './components/admin/src/pages/news-import/NewsImportPage';
 import { CategoriesPage } from './components/admin/src/pages/categories/CategoriesPage';
 import { TagsPage } from './components/admin/src/pages/tags/TagsPage';
 import { MediaLibraryPage } from './components/admin/src/pages/media/MediaLibraryPage';
@@ -41,6 +44,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<BlogPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/news/:slug" element={<NewsDetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/categories" element={<PublicCategoriesPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -63,6 +68,7 @@ function App() {
                   <Route path="blogs" element={<BlogListPage />} />
                   <Route path="blogs/new" element={<BlogEditorPage />} />
                   <Route path="blogs/edit/:id" element={<BlogEditorPage />} />
+                  <Route path="news-import" element={<NewsImportPage />} />
                   <Route path="categories" element={<CategoriesPage />} />
                   <Route path="tags" element={<TagsPage />} />
                   <Route path="media" element={<MediaLibraryPage />} />

@@ -77,7 +77,7 @@ export const BlogCard: React.FC<Props> = ({ post, index = 0 }) => {
           </div>
 
           <Link
-            to={`/blog/${post.slug}`}
+            to={post.isNews ? `/news/${post.slug}` : `/blog/${post.slug}`}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#D80408] hover:text-[#F97316] transition-colors duration-200 group/link"
             aria-label={`Read more about ${post.title}`}
           >

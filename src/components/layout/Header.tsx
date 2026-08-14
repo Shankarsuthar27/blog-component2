@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
+  { label: 'Jalore News', to: '/news' },
   { label: 'About', to: '/about' },
   { label: 'Blog', to: '/' },
   { label: 'Categories', to: '/categories' },

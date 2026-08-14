@@ -16,6 +16,8 @@ export interface BlogPost {
   views: number;
   featured?: boolean;
   tags?: string[];
+  isNews?: boolean;
+  rawDate?: number;
 }
 
 export interface Category {

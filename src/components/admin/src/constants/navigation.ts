@@ -8,6 +8,7 @@ export interface NavItem {
 export const NAVIGATION_ITEMS: NavItem[] = [
   { label: 'Dashboard', path: '/admin', icon: 'LayoutDashboard', group: 'content' },
   { label: 'All Blogs', path: '/admin/blogs', icon: 'BookOpen', group: 'content' },
+  { label: 'News Import', path: '/admin/news-import', icon: 'Newspaper', group: 'content' },
   { label: 'Categories', path: '/admin/categories', icon: 'FolderTree', group: 'content' },
   { label: 'Tags', path: '/admin/tags', icon: 'Hash', group: 'content' },
   { label: 'Media Library', path: '/admin/media', icon: 'Image', group: 'content' },

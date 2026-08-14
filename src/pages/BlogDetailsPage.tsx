@@ -99,6 +99,18 @@ export const BlogDetailsPage: React.FC = () => {
         .single();
 
       if (error || !blogData) {
+        // Fallback check if it's an imported news article
+        const { data: newsCheck } = await supabase
+          .from('news_articles')
+          .select('slug')
+          .eq('slug', slug)
+          .maybeSingle();
+
+        if (newsCheck?.slug) {
+          navigate(`/news/${newsCheck.slug}`, { replace: true });
+          return;
+        }
+
         setNotFound(true);
         setIsLoading(false);
         return;

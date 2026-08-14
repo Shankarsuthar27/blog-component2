@@ -20,10 +20,12 @@ const POSTS_PER_PAGE = 3;
 // Transform Supabase blog row → BlogPost type for UI components
 function transformBlog(row: any, categories: any[]): BlogPost {
   const category = categories.find((c: any) => c.id === row.category_id);
+  const dateStr = row.published_at || row.created_at;
   return {
     id: row.id,
     title: row.title,
     slug: row.slug,
+    isNews: false,
     excerpt: row.excerpt || '',
     content: row.content || '',
     image: row.featured_image
@@ -35,13 +37,41 @@ function transformBlog(row: any, categories: any[]): BlogPost {
       avatar: row.author_avatar || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100',
       bio: row.author_bio || '',
     },
-    publishedAt: row.published_at
-      ? new Date(row.published_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-      : new Date(row.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+    publishedAt: dateStr
+      ? new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      : new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+    rawDate: dateStr ? new Date(dateStr).getTime() : 0,
     readingTime: row.reading_time || '5 min read',
     views: row.views || 0,
     featured: row.featured || false,
     tags: [],
+  };
+}
+
+function transformNewsArticle(news: any): BlogPost {
+  const dateStr = news.published_at || news.source_published_at || news.created_at;
+  return {
+    id: news.id,
+    title: news.title,
+    slug: news.slug,
+    isNews: true,
+    excerpt: news.summary || news.excerpt || news.title,
+    content: news.content || news.excerpt || '',
+    image: news.featured_image || 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=800',
+    category: news.category || 'Jalore News',
+    author: {
+      name: news.source_name || 'Dainik Bhaskar',
+      avatar: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&q=80&w=100',
+      bio: `Source: ${news.source_name || 'Dainik Bhaskar'}`,
+    },
+    publishedAt: dateStr
+      ? new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+      : new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+    rawDate: dateStr ? new Date(dateStr).getTime() : 0,
+    readingTime: '3 min read',
+    views: news.views || 0,
+    featured: news.is_featured || false,
+    tags: news.tags || [],
   };
 }
 
@@ -62,11 +92,11 @@ export const BlogPage: React.FC = () => {
       .then(({ data }) => setCategories(data || []));
   }, []);
 
-  // Fetch published blogs
+  // Fetch published blogs AND approved/published imported news
   useEffect(() => {
     setIsLoading(true);
-    const fetchBlogs = async () => {
-      let query = supabase
+    const fetchContent = async () => {
+      const blogsPromise = supabase
         .from('blogs')
         .select(`
           id, title, slug, excerpt, content, featured_image, category_id,
@@ -76,27 +106,36 @@ export const BlogPage: React.FC = () => {
         .eq('status', 'published')
         .order('published_at', { ascending: false });
 
-      const { data, error } = await query;
+      const newsPromise = supabase
+        .from('news_articles')
+        .select('*')
+        .in('status', ['published', 'approved'])
+        .order('source_published_at', { ascending: false });
 
-      if (error) {
-        console.error('Error fetching blogs:', error);
-        setBlogs([]);
-      } else {
-        const transformed = (data || []).map((row: any) => {
-          const profile = row.profiles;
-          return transformBlog({
-            ...row,
-            author_name: profile?.full_name,
-            author_avatar: profile?.avatar,
-          }, categories);
-        });
-        setBlogs(transformed);
-      }
+      const [{ data: blogsData }, { data: newsData }] = await Promise.all([blogsPromise, newsPromise]);
+
+      const transformedBlogs = (blogsData || []).map((row: any) => {
+        const profile = row.profiles;
+        return transformBlog({
+          ...row,
+          author_name: profile?.full_name,
+          author_avatar: profile?.avatar,
+        }, categories);
+      });
+
+      const transformedNews = (newsData || []).map(transformNewsArticle);
+
+      // Combine and sort by date descending
+      const combined = [...transformedBlogs, ...transformedNews].sort(
+        (a, b) => (b.rawDate || 0) - (a.rawDate || 0)
+      );
+
+      setBlogs(combined);
       setIsLoading(false);
     };
 
-    if (categories.length >= 0) { // Run once categories is loaded (even empty)
-      fetchBlogs();
+    if (categories.length >= 0) {
+      fetchContent();
     }
   }, [categories]);
 

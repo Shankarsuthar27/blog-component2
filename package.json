@@ -4,8 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently --names \"vite,news-fetcher\" -c \"cyan,magenta\" \"vite\" \"tsx news-fetcher/src/server.ts\"",
+    "dev:frontend": "vite",
     "build": "tsc -b && vite build",
+    "news-fetcher": "tsx news-fetcher/src/server.ts",
     "lint": "oxlint",
     "preview": "vite preview"
   },
@@ -23,7 +25,10 @@
     "@tiptap/extension-underline": "^2.11.5",
     "@tiptap/react": "^2.11.5",
     "@tiptap/starter-kit": "^2.11.5",
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "framer-motion": "^12.43.0",
     "lucide-react": "^1.28.0",
     "react": "^19.2.8",
@@ -38,14 +43,18 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
     "autoprefixer": "^10.5.4",
+    "concurrently": "^10.0.4",
     "oxlint": "^1.75.0",
     "postcss": "^8.5.25",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.19.2",
     "typescript": "~6.0.2",
     "vite": "^8.2.0"
   }

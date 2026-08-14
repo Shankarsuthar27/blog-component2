@@ -84,7 +84,7 @@ export const FeaturedPost: React.FC<Props> = ({ post }) => {
 
           {/* CTA */}
           <Link
-            to={`/blog/${post.slug}`}
+            to={post.isNews ? `/news/${post.slug}` : `/blog/${post.slug}`}
             className="inline-flex items-center gap-2.5 self-start bg-[#F97316] hover:bg-orange-600 text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-orange-200 hover:-translate-y-0.5 group/btn"
           >
             Read Article
