@@ -83,17 +83,33 @@ export const NewsImportPage: React.FC = () => {
   // Fetch backend server status & scheduler state
   const fetchServerStatus = useCallback(async () => {
     try {
-      const res = await fetch('/api/news/status', { signal: AbortSignal.timeout(4000) });
+      // 1. Try Vite proxied API route
+      let res = await fetch('/api/news/status', { signal: AbortSignal.timeout(8000) });
+      if (!res.ok) {
+        // 2. Fallback to direct backend URL if proxy returned non-OK
+        res = await fetch('http://127.0.0.1:3001/api/news/status', { signal: AbortSignal.timeout(8000) });
+      }
       if (res.ok) {
         const data = await res.json();
         setServerStats(data);
         setServerOffline(false);
-      } else {
-        setServerOffline(true);
+        return;
       }
     } catch {
-      setServerOffline(true);
+      // 3. Fallback direct check if proxy failed/timed out
+      try {
+        const fallbackRes = await fetch('http://127.0.0.1:3001/api/news/status', { signal: AbortSignal.timeout(8000) });
+        if (fallbackRes.ok) {
+          const data = await fallbackRes.json();
+          setServerStats(data);
+          setServerOffline(false);
+          return;
+        }
+      } catch {
+        // Ignored
+      }
     }
+    setServerOffline(true);
   }, []);
 
   useEffect(() => {
@@ -120,10 +136,18 @@ export const NewsImportPage: React.FC = () => {
     setServerOffline(false);
     const toastId = toast.loading('Syncing latest Jalore news from Dainik Bhaskar…');
     try {
-      const response = await fetch('/api/news/sync', {
+      let response = await fetch('/api/news/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });
+
+      if (!response.ok) {
+        // Fallback to direct backend URL if proxy fails
+        response = await fetch('http://127.0.0.1:3001/api/news/sync', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }
 
       if (response.ok) {
         const result = await response.json();
@@ -143,6 +167,21 @@ export const NewsImportPage: React.FC = () => {
       }
       await Promise.all([fetchArticles(), fetchServerStatus()]);
     } catch {
+      // Direct fallback attempt
+      try {
+        const directRes = await fetch('http://127.0.0.1:3001/api/news/sync', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (directRes.ok) {
+          const result = await directRes.json();
+          toast.success(`Sync completed (${result.imported || 0} imported).`, { id: toastId });
+          await Promise.all([fetchArticles(), fetchServerStatus()]);
+          return;
+        }
+      } catch {
+        // Ignored
+      }
       setServerOffline(true);
       toast.error('Cannot connect to news-fetcher server. Run "npm run dev" in terminal.', { id: toastId, duration: 7000 });
     } finally {
